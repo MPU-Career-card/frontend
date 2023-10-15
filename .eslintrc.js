@@ -31,6 +31,7 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
+        'react/no-unstable-nested-components': 'off',
 
         indent: [2, 4],
         'import/prefer-default-export': 'off',

@@ -1,8 +1,12 @@
 import { Mods } from './types';
 
 export const cn = (
-    ...args: Array<Mods | string>
+    ...args: Array<Mods | string | undefined>
 ): string => args.map((item) => {
+    if (typeof item === 'undefined') {
+        return undefined;
+    }
+
     if (typeof item === 'string') {
         return item;
     }
