@@ -1,0 +1,47 @@
+.xs {
+  font-size: var(--font-size-xs);
+  line-height: var(--font-line-xs);
+}
+
+.s {
+  font-size: var(--font-size-s);
+  line-height: var(--font-line-s);
+}
+
+.m {
+  font-size: var(--font-size-m);
+  line-height: var(--font-line-m);
+}
+
+.l {
+  font-size: var(--font-size-l);
+  line-height: var(--font-line-l);
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.primary {
+  font-family: var(--font-family-primary);
+}
+
+.secondary {
+  font-family: var(--font-family-secondary);
+}
+
+.black {
+  color: #000000;
+}
+
+.white {
+  color: #FFFFFF;
+}
+
+.purple {
+  color: #536DB4;
+}

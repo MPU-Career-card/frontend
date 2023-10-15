@@ -1,7 +1,10 @@
+import { Page } from 'pages';
+import { Text } from 'shared/ui';
+
 const HomePage = () => (
-    <div>
-        Главная
-    </div>
+    <Page>
+        <Text>Главная</Text>
+    </Page>
 );
 
 export default HomePage;
