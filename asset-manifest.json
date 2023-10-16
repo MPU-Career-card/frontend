@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fontend/static/css/main.2617773e.css",
+    "main.js": "/fontend/static/js/main.318cee37.js",
+    "static/js/528.0342ea72.chunk.js": "/fontend/static/js/528.0342ea72.chunk.js",
+    "index.html": "/fontend/index.html",
+    "main.2617773e.css.map": "/fontend/static/css/main.2617773e.css.map",
+    "main.318cee37.js.map": "/fontend/static/js/main.318cee37.js.map",
+    "528.0342ea72.chunk.js.map": "/fontend/static/js/528.0342ea72.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2617773e.css",
+    "static/js/main.318cee37.js"
+  ]
+}

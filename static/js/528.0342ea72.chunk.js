@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcareer_card=self.webpackChunkcareer_card||[]).push([[528],{528:function(e,r,c){c.r(r);var n=c(158),a=c(223),u=c(184);r.default=function(){return(0,u.jsx)(n.T,{children:(0,u.jsx)(a.xv,{children:"\u0413\u043b\u0430\u0432\u043d\u0430\u044f"})})}}}]);
+//# sourceMappingURL=528.0342ea72.chunk.js.map
