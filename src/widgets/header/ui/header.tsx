@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import {
-    Container, Flex, Text, Input,
+    Container, Flex, Text,
 } from 'shared/ui';
 import { Routes } from 'shared/config';
 import { Logo } from 'shared/icons';
@@ -27,7 +27,6 @@ export const Header = () => (
                     </Flex>
                 </Link>
                 <Flex justify="space-between" gap={32}>
-                    <Input align="center" type="number" />
                     <Text
                         color="white"
                         view="secondary"

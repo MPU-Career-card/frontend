@@ -10,13 +10,13 @@ export const Input: FC<InputProps> = ({
     type = 'text',
     size = 's',
     align = 'start',
-    // borderless = false,
+    border = false,
 }) => (
     <input
         className={cn(
             styles[size],
             styles[align],
-            // {styles[borderless : 'borderless'] }
+            styles[border ? 'border' : 'borderless'],
         )}
         type={type}
     />
