@@ -12,12 +12,12 @@ export const Input: FC<InputProps> = ({
     align = 'start',
     // borderless = false,
 }) => (
-    <Input
+    <input
         className={cn(
-            styles[type],
             styles[size],
             styles[align],
-            // styles[borderless ? 'borderless' : ''], // TODO
+            // {styles[borderless : 'borderless'] }
         )}
+        type={type}
     />
 );
