@@ -3,3 +3,4 @@ export { Container } from './container';
 export { Spinner } from './spinner';
 export { Text } from './text';
 export { Flex } from './flex';
+export { Tag } from './tag';
