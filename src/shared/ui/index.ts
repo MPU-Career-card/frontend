@@ -3,4 +3,5 @@ export { Container } from './container';
 export { Spinner } from './spinner';
 export { Text } from './text';
 export { Flex } from './flex';
+export { Input } from './input';
 export { Tag } from './tag';
