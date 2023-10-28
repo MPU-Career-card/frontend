@@ -5,3 +5,4 @@ export { Text } from './text';
 export { Flex } from './flex';
 export { Input } from './input';
 export { Tag } from './tag';
+export { Card } from './card';

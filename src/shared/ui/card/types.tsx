@@ -1,0 +1,8 @@
+import { ComponentProps } from 'react';
+
+export type CardProps = ComponentProps<'div'> & {
+  title?: string;
+  text?: string;
+  image?: string;
+  height?: number;
+};
