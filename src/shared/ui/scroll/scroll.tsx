@@ -1,7 +1,6 @@
 import { cn } from 'shared/lib';
 
 import React, { ReactElement, FC, cloneElement } from 'react';
-import { Card } from '../card';
 import styles from './scroll.module.scss';
 import { ScrollProps } from './types';
 
@@ -14,15 +13,12 @@ export const Scroll: FC<ScrollProps> = ({
 
     return (
         <div className={cn(
-            styles.tabs,
+            styles.scroll,
             styles[`justify-${justify}`],
         )}
         >
-            {childrenArray.map((tab) => cloneElement(
-                tab,
-                {
-                    active: tab.props.value !== value,
-                },
+            {childrenArray.map((card) => cloneElement(
+                card,
             ))}
         </div>
     );
