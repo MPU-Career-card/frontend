@@ -6,3 +6,5 @@ export { Flex } from './flex';
 export { Input } from './input';
 export { Tag } from './tag';
 export { Card } from './card';
+export { Tabs } from './tabs';
+export { Tab } from './tabs/tab';
