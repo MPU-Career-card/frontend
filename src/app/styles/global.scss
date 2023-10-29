@@ -1,0 +1,32 @@
+.white {
+  background: var(--white);
+}
+
+.purple {
+  background: var(--purple);
+}
+
+.blue {
+  background: var(--blue);
+}
+
+.yellow {
+  background: var(--yellow);
+}
+
+.orange {
+  background: var(--orange);
+}
+
+.silver {
+  background: var(--silver);
+}
+
+.transparent {
+  background: transparent;
+  border: 1px var(--black) solid;
+}
+
+body {
+  background: var(--background);
+}
