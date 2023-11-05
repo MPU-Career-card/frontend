@@ -6,7 +6,7 @@ export type TextProps = Omit<ComponentProps<TagType>, 'children'> & {
   children: string;
   tag?: TagType;
   view?: 'primary' | 'secondary';
-  color?: 'black' | 'white' | 'purple' | 'darkGray';
+  color?: 'black' | 'white' | 'purple' | 'darkGray'| 'grey';
   size?: 'xs' | 's' | 'm' | 'l';
   weight?: 'regular'| 'semi' | 'bold';
   caps?: boolean;

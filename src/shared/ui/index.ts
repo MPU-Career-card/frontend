@@ -9,3 +9,5 @@ export { Tag } from './tag';
 export { Card } from './card';
 export { Tabs } from './tabs';
 export { Tab } from './tabs/tab';
+export { Button } from './button';
+export { Pagination } from './pagination';
