@@ -1,5 +1,5 @@
 import { Page } from 'pages';
-import { Card, Scroll, Text } from 'shared/ui';
+import { Text } from 'shared/ui';
 
 const HomePage = () => (
     <Page>
