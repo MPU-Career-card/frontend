@@ -1,0 +1,18 @@
+.tab {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  background: #596daf;
+}
+
+.left {
+  border-radius: 100px 0 0 100px;
+}
+
+.right {
+  border-radius: 0 100px 100px 0;
+}
