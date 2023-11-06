@@ -1,6 +1,7 @@
-import { ComponentProps, FC } from 'react';
+import { ComponentProps } from 'react';
 
-export type TagProps = ComponentProps<'div'> & {
-  color?: 'white' | 'black';
+export type TagProps = Omit<ComponentProps<'div'>, 'children'> & {
+  children: string;
+  color?: 'white' | 'black' | 'gray'
   size?: 'xs' | 's' | 'm' | 'l';
 };

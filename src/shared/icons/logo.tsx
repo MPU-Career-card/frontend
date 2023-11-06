@@ -1,10 +1,13 @@
-export const Logo = () => (
+import { SVG } from './types';
+
+export const Logo: SVG = ({ ...props }) => (
     <svg
         width="39"
         height="34"
         viewBox="0 0 39 34"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        {...props}
     >
         <path
             d="M0 0H22.5818L11.7927 16.56L22.5818 33.12H0V0Z"
