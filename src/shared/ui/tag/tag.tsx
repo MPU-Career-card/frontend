@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import { cn } from 'shared/lib';
+import { Text } from 'shared/ui';
 
 import { TagProps } from './types';
 
@@ -14,12 +15,14 @@ export const Tag: FC<TagProps> = ({
 }) => (
     <div
         className={cn(
-            styles[color],
+            color,
             styles[size],
             styles.tag,
         )}
         {...props}
     >
-        {children}
+        <Text size="xs">
+            {children}
+        </Text>
     </div>
 );

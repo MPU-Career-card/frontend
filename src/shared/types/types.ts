@@ -1,5 +1,6 @@
 export type Color =
   'white' |
+  'black' |
   'purple' |
   'blue' |
   'yellow' |

@@ -1,8 +1,10 @@
+import React, { ReactElement, FC, cloneElement } from 'react';
+
 import { cn } from 'shared/lib';
 
-import React, { ReactElement, FC, cloneElement } from 'react';
-import styles from './scroll.module.scss';
 import { ScrollProps } from './types';
+
+import styles from './scroll.module.scss';
 
 export const Scroll: FC<ScrollProps> = ({
     justify = 'center',

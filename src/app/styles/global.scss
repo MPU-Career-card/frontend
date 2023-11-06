@@ -1,3 +1,5 @@
+// SHARED CLASSES
+
 .white {
   background: var(--white);
 }
@@ -27,6 +29,12 @@
   border: 1px var(--black) solid;
 }
 
+.gray {
+  background: var(--gray);
+}
+
+// GLOBAL STYLE
+
 body {
-  background: var(--background);
+  background: var(--gray);
 }

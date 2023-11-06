@@ -1,0 +1,64 @@
+import React, { FC, useMemo } from 'react';
+
+import { Flex, Text, Tag } from 'shared/ui';
+
+import { CardLink } from '../card-link';
+import { ProCardProps } from './types';
+
+import styles from './pro-card.module.scss';
+
+export const ProCard: FC<ProCardProps> = ({
+    to,
+    color,
+    body,
+    header,
+    tags,
+}) => {
+    const textColor = useMemo(() => {
+        if (['purple', 'blue'].includes(color)) {
+            return 'white';
+        }
+
+        return 'black';
+    }, [color]);
+
+    const tagColor = useMemo(() => {
+        if (['white'].includes(color)) {
+            return 'gray';
+        }
+
+        return 'white';
+    }, [color]);
+
+    return (
+        <CardLink to={to} color={color}>
+            <Flex
+                className={styles.content}
+                align="start"
+                direction="vertical"
+                gap={44}
+            >
+                {header && (
+                    <Text
+                        size="l"
+                        weight="semi"
+                        color={textColor}
+                    >
+                        {header}
+                    </Text>
+                )}
+                {body && (
+                    <Text
+                        size="s"
+                        color={textColor}
+                    >
+                        {body}
+                    </Text>
+                )}
+            </Flex>
+            <Flex gap={8} justify="end">
+                {tags?.map((tag) => <Tag color={tagColor}>{tag}</Tag>)}
+            </Flex>
+        </CardLink>
+    );
+};

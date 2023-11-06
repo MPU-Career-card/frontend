@@ -25,8 +25,7 @@ export const Card: FC<CardProps> = ({
             <Flex gap={8}>
                 {title && (
                     <Text
-                        color="darkGray"
-                        view="secondary"
+                        color="dark-gray"
                         size="s"
                         weight="semi"
                     >
@@ -37,7 +36,7 @@ export const Card: FC<CardProps> = ({
             </Flex>
         ) : null}
         {text ? (
-            <Text color="black" view="secondary" size="xs" weight="regular">
+            <Text color="black" size="xs" weight="regular">
                 {text}
             </Text>
         ) : null}
