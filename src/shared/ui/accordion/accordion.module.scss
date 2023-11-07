@@ -1,7 +1,23 @@
 .accordion {
-    display: flex;
-    overflow: scroll;
+  margin: 32px 24px;
 }
+.accordionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.accordion_card {
+  display: flex;
+  margin-top: 32px;
+}
+
   .justify-start {
     justify-content: start;
   }
