@@ -13,9 +13,11 @@ export const Flex: FC<FlexProps> = ({
     nowrap = false,
     gap,
     children,
+    className,
 }) => (
     <div
         className={cn(
+            className,
             styles.flex,
             styles[direction],
             styles[`align-${align}`],

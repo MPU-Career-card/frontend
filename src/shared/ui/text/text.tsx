@@ -12,7 +12,7 @@ export const Text: FC<TextProps> = ({
     tag: Tag = 'div',
     color = 'black',
     size = 's',
-    view = 'primary',
+    view = 'gilroy',
     weight = 'regular',
     caps = false,
     to,
@@ -38,7 +38,7 @@ export const Text: FC<TextProps> = ({
             )}
             {...props}
         >
-            {caps ? children.toUpperCase() : children}
+            {caps ? children.toString().toUpperCase() : children}
         </Tag>
     </ConditionalWrapper>
 );

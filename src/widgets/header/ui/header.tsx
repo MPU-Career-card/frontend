@@ -19,7 +19,6 @@ export const Header = () => (
                             color="white"
                             weight="bold"
                             size="m"
-                            view="secondary"
                             caps
                         >
                             Карьерные карты
@@ -29,7 +28,6 @@ export const Header = () => (
                 <Flex justify="space-between" gap={32}>
                     <Text
                         color="white"
-                        view="secondary"
                         size="s"
                         to={Routes.MAIN}
                         caps
@@ -38,7 +36,6 @@ export const Header = () => (
                     </Text>
                     <Text
                         color="white"
-                        view="secondary"
                         size="s"
                         to={Routes.MAIN}
                         caps
@@ -47,7 +44,6 @@ export const Header = () => (
                     </Text>
                     <Text
                         color="white"
-                        view="secondary"
                         size="s"
                         to={Routes.MAIN}
                         caps

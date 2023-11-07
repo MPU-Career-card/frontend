@@ -1,5 +1,5 @@
 import React, {
-    FC, cloneElement, useState, ReactElement,
+    FC, cloneElement, ReactElement,
 } from 'react';
 
 import { cn } from 'shared/lib';
