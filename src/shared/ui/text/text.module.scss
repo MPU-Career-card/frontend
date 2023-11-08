@@ -1,3 +1,7 @@
+.text {
+  text-align: start;
+}
+
 .\2xs {
   font-size: var(--font-size-2xs);
   line-height: var(--font-line-2xs);
@@ -40,6 +44,10 @@
 
 .regular {
   font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
 }
 
 .semi {

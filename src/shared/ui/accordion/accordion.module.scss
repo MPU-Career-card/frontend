@@ -1,43 +1,16 @@
 .accordion {
-  margin: 32px 24px;
-}
-.accordionContainer {
-  display: flex;
-  flex-direction: column;
+  margin: 32px 0 32px;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  justify-content: space-between;
+.text {
+  flex-grow: 1;
 }
 
-.accordion_card {
-  display: flex;
+.content {
   margin-top: 32px;
 }
 
-  .justify-start {
-    justify-content: start;
-  }
-  
-  .justify-center {
-    justify-content: center;
-  }
-  
-  .justify-end {
-    justify-content: end;
-  }
-  
-  .justify-space-between {
-    justify-content: space-between;
-  }
-  
-  .justify-space-around {
-    justify-content: space-around;
-  }
-  
-  .justify-space-evenly {
-    justify-content: space-evenly;
-  }
+.open {
+  transform: rotate(180deg);
+  transition: .3s ease;
+}

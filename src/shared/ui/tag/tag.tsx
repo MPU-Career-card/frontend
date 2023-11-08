@@ -10,7 +10,11 @@ import styles from './tag.module.scss';
 export const Tag: FC<TagProps> = ({
     children,
     color = 'white',
+    textColor = 'black',
     size = 'm',
+    weight = 'regular',
+    view = 'gilroy',
+    caps,
     ...props
 }) => (
     <div
@@ -21,7 +25,13 @@ export const Tag: FC<TagProps> = ({
         )}
         {...props}
     >
-        <Text size="xs">
+        <Text
+            color={textColor}
+            size={size}
+            view={view}
+            weight={weight}
+            caps={caps}
+        >
             {children}
         </Text>
     </div>
