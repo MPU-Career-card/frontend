@@ -15,3 +15,4 @@ export { Button } from './button';
 export { Pagination } from './pagination';
 export { ProCard } from './pro-card';
 export { SpecialityCard } from './speciality-card';
+export { Accordion } from './accordion';

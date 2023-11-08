@@ -30,6 +30,7 @@ export const Text: FC<TextProps> = ({
     >
         <Tag
             className={cn(
+                className,
                 styles.text,
                 styles[size],
                 styles[weight],

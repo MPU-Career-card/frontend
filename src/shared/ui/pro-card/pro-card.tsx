@@ -57,7 +57,11 @@ export const ProCard: FC<ProCardProps> = ({
                 )}
             </Flex>
             <Flex gap={8} justify="end">
-                {tags?.map((tag) => <Tag color={tagColor}>{tag}</Tag>)}
+                {tags?.map((tag) => (
+                    <Tag size="xs" color={tagColor}>
+                        {tag}
+                    </Tag>
+                ))}
             </Flex>
         </CardLink>
     );

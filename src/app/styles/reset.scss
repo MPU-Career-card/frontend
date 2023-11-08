@@ -68,6 +68,12 @@ select {
   font: inherit;
 }
 
+button {
+  display: block;
+  background: none;
+  width: 100%;
+}
+
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {
   * {
