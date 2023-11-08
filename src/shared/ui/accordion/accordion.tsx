@@ -36,9 +36,12 @@ export const Accordion: FC<AccordionProps> = ({
                         {text}
                     </Text>
                     <ArrowToggleIcon
-                        className={cn({
-                            [styles.open]: isOpen,
-                        })}
+                        className={cn(
+                            styles.arrow,
+                            {
+                                [styles.open]: isOpen,
+                            },
+                        )}
                     />
                 </Flex>
             </button>

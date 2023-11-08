@@ -10,7 +10,11 @@
   margin-top: 32px;
 }
 
+.arrow {
+  transform: rotate(0deg);
+  transition: all .2s ease-in-out;
+}
+
 .open {
   transform: rotate(180deg);
-  transition: .3s ease;
 }
