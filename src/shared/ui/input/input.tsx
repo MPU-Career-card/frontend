@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import { cn } from 'shared/lib';
+import { SearchIcon } from 'shared/icons';
 
 import { InputProps } from './types';
 
@@ -11,13 +12,25 @@ export const Input: FC<InputProps> = ({
     size = 's',
     align = 'start',
     border = false,
+    placeholder,
+    icon = false,
 }) => (
-    <input
-        className={cn(
-            styles[size],
-            styles[align],
-            styles[border ? 'border' : 'borderless'],
+    <div className={cn(
+        styles.inputWrapper,
+        styles[border ? 'border' : ''],
+    )}
+    >
+        { icon && (
+            <SearchIcon />
         )}
-        type={type}
-    />
+        <input
+            className={cn(
+                styles.input,
+                styles[size],
+                styles[align],
+            )}
+            placeholder={placeholder}
+            type={type}
+        />
+    </div>
 );

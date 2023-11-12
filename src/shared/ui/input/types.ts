@@ -5,4 +5,6 @@ export type InputProps = ComponentProps<'input'> & {
   size?: 'xs' | 's' | 'm' | 'l';
   align?: 'center' | 'start' | 'end';
   border?: boolean;
+  placeholder?: string;
+  icon?: boolean;
 };

@@ -2,13 +2,14 @@ import { Page } from 'pages';
 
 import {
     Accordion,
-    Container, Flex, ProCard, SpecialityCard, Tag, Text,
+    Container, Flex, ProCard, SpecialityCard, Tag, Text, Input,
 } from 'shared/ui';
 import { Routes } from 'shared/config';
 
 const HomePage = () => (
     <Page>
         <Container>
+            <Input icon placeholder="fasdf" border />
             <Text>Главная</Text>
             <Flex gap={32}>
                 <ProCard
