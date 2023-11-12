@@ -50,6 +50,7 @@ export const ProCard: FC<ProCardProps> = ({
                 {body && (
                     <Text
                         size="s"
+                        weight="regular"
                         color={textColor}
                     >
                         {body}
