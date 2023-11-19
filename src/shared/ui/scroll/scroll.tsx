@@ -7,17 +7,18 @@ import { ScrollProps } from './types';
 import styles from './scroll.module.scss';
 
 export const Scroll: FC<ScrollProps> = ({
-    justify = 'center',
+    gap = 5,
     children,
 }) => {
     const childrenArray = React.Children
         .toArray(children) as ReactElement[];
 
     return (
-        <div className={cn(
-            styles.scroll,
-            styles[`justify-${justify}`],
-        )}
+        <div
+            className={cn(
+                styles.scroll,
+            )}
+            style={{ gap }}
         >
             {childrenArray.map((card) => cloneElement(
                 card,

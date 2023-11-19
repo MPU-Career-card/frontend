@@ -11,6 +11,8 @@ export const Flex: FC<FlexProps> = ({
     align = 'center',
     justify = 'start',
     nowrap = false,
+    marginTop,
+    marginBottom,
     gap,
     children,
     className,
@@ -26,7 +28,7 @@ export const Flex: FC<FlexProps> = ({
                 nowrap,
             },
         )}
-        style={{ gap }}
+        style={{ gap, marginTop, marginBottom }}
     >
         {children}
     </div>

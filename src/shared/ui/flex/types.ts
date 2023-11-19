@@ -8,4 +8,6 @@ export type FlexProps = ComponentProps<'div'> & {
       'space-between' | 'space-around' | 'space-evenly';
   nowrap?: boolean;
   gap?: number;
+  marginTop?: number;
+  marginBottom?: number;
 };
