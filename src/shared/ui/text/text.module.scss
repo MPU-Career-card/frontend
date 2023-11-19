@@ -2,7 +2,7 @@
   text-align: start;
 }
 
-.\2xs {
+.xs2 {
   font-size: var(--font-size-2xs);
   line-height: var(--font-line-2xs);
 }
@@ -32,12 +32,12 @@
   line-height: var(--font-line-xl);
 }
 
-.\2xl {
+.xl2 {
   font-size: var(--font-size-2xl);
   line-height: var(--font-line-2xl);
 }
 
-.\3xl {
+.xl3 {
   font-size: var(--font-size-3xl);
   line-height: var(--font-line-3xl);
 }
@@ -88,4 +88,8 @@
 
 .purple {
   color: #536DB4;
+}
+
+.pink {
+  color: #D790FF;
 }

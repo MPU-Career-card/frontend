@@ -4,4 +4,5 @@ export type ScrollProps = ComponentProps<'div'> & {
     justify?:
     'center' | 'start' | 'end' |
     'space-between' | 'space-around' | 'space-evenly';
+    gap?: number;
 };
