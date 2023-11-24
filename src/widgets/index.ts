@@ -3,3 +3,4 @@ export { Map } from './map';
 export { Scroll } from './scroll';
 export { Cards } from './cards';
 export { Specialties } from './specialties';
+export { SpecialtiesAccordions } from './specialties-accordions';
