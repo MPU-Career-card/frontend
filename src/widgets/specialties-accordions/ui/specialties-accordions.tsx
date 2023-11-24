@@ -1,4 +1,6 @@
 /* eslint-disable max-len */
+import { cn } from 'shared/lib';
+
 import {
     Flex, Text, Card, Tabs, Tab, Input, Accordion, Tag,
 } from 'shared/ui';
@@ -11,7 +13,7 @@ export const SpecialtiesAccordions = () => {
 
     return (
         <div
-            className={styles.specialtiesAccordions}
+            className={cn(styles.specialtiesAccordions)}
         >
             <Tabs value={tab} onClick={setTab}>
                 <Tab active roundedSide="left" value="1">
