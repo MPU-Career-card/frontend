@@ -41,23 +41,23 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
                 className={styles.header}
                 direction="vertical"
                 align="start"
-                gap={32}
+                gap={26}
             >
-                <Tag color="gray">{faculty}</Tag>
-                <Text size="xl" weight="semi">{name}</Text>
+                <Tag color="gray" size="s">{faculty}</Tag>
+                <Text size="l" weight="semi">{name}</Text>
             </Flex>
-            <Flex gap={80}>
+            <Flex gap={70}>
                 <Flex direction="vertical" align="start" gap={32}>
                     <Flex direction="vertical" align="start" gap={4}>
                         <Flex gap={6} align="baseline">
-                            <Text size="xl" weight="semi">{priceValue}</Text>
+                            <Text size="l" weight="semi">{priceValue}</Text>
                             <Text size="s" weight="semi">{priceLabel}</Text>
                         </Flex>
                         <Text size="s">Стоимость, ₽</Text>
                     </Flex>
                     <Flex direction="vertical" align="start" gap={4}>
                         <Flex gap={6} align="baseline">
-                            <Text size="xl" weight="semi">
+                            <Text size="l" weight="semi">
                                 {budgetPlacesCount.value}
                             </Text>
                             <Text size="s" weight="semi">
@@ -70,7 +70,7 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
                 <Flex direction="vertical" align="start" gap={32}>
                     <Flex direction="vertical" align="start" gap={4}>
                         <Flex gap={6} align="baseline">
-                            <Text size="xl" weight="semi">
+                            <Text size="l" weight="semi">
                                 {passingScore.value}
                             </Text>
                             <Text size="s" weight="semi">
@@ -81,7 +81,7 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
                     </Flex>
                     <Flex direction="vertical" align="start" gap={4}>
                         <Flex gap={6} align="baseline">
-                            <Text size="xl" weight="semi">{period}</Text>
+                            <Text size="l" weight="semi">{period}</Text>
                             <Text size="s" weight="semi">{periodLabel}</Text>
                         </Flex>
                         <Text size="s">Срок обучения</Text>

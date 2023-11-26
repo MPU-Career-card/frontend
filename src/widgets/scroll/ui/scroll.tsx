@@ -2,6 +2,7 @@ import {
     Scroll as ScrollComponent, Flex, Text, Card,
 } from 'shared/ui';
 
+import { cn } from 'shared/lib';
 import React, { FC } from 'react';
 import { ScrollProps } from './types';
 import styles from './scroll.module.scss';
@@ -11,7 +12,7 @@ export const Scroll: FC<ScrollProps> = ({
     marginBottom,
 }) => (
     <Flex
-        className={styles.scroll}
+        className={cn(styles.scroll)}
         gap={24}
         marginTop={marginTop}
         marginBottom={marginBottom}

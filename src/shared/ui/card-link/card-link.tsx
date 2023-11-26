@@ -11,13 +11,15 @@ export const CardLink: FC<CardLinkProps> = ({
     to,
     className,
     color,
+    highlight = true,
     children,
 }) => (
     <div className={cn(styles.wrapper, color, className)}>
         <div className={styles.header}>{children[0]}</div>
         <div className={styles.footer}>{children[1]}</div>
-        <div className={styles.arrow}>
+        <div className={highlight ? styles.highlightArrow : styles.arrow}>
             <ArrowLink
+                width={highlight ? 64 : 38}
                 to={to}
                 color={color}
             />
