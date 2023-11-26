@@ -5,16 +5,25 @@
 
 .header {
   padding: 32px 32px 0;
+  margin-bottom: 16px;
 }
 
 .footer {
-  padding: 0 104px 32px 32px;
+  padding: 0 0 32px 32px;
 }
 
-.arrow {
+.highlightArrow {
   position: absolute;
   border: 16px solid var(--gray);
   border-radius: 50%;
   bottom: -16px;
   right: -16px;
+}
+
+.arrow {
+  border: 1px solid black;
+  border-radius: 50%;;
+  position: absolute;
+  bottom: 95px;
+  right: 0px;
 }

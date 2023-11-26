@@ -4,6 +4,7 @@ import {
 } from 'shared/ui';
 
 import React, { FC } from 'react';
+import { cn } from 'shared/lib';
 import { MapProps } from './types';
 import styles from './map.module.scss';
 
@@ -12,7 +13,7 @@ export const Map: FC<MapProps> = ({
     marginBottom,
 }) => (
     <div
-        className={styles.map}
+        className={cn(styles.map)}
         style={{ marginTop, marginBottom }}
     >
         <Text size="xl2" color="white">

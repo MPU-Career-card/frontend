@@ -3,6 +3,7 @@ import {
 } from 'shared/ui';
 
 import React, { FC } from 'react';
+import { cn } from 'shared/lib';
 import { CardsProps } from './types';
 import styles from './cards.module.scss';
 
@@ -11,7 +12,7 @@ export const Cards: FC<CardsProps> = ({
     marginBottom,
 }) => (
     <Flex
-        className={styles.scroll}
+        className={cn(styles.scroll)}
         gap={48}
         direction="vertical"
         marginTop={marginTop}

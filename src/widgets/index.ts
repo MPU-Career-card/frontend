@@ -4,3 +4,6 @@ export { Scroll } from './scroll';
 export { Cards } from './cards';
 export { Specialties } from './specialties';
 export { SpecialtiesAccordions } from './specialties-accordions';
+export { Partners } from './partners';
+export { Links } from './links';
+export { Footer } from './footer';

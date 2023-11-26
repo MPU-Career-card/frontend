@@ -16,11 +16,15 @@ export const SpecialtiesAccordions = () => {
             className={cn(styles.specialtiesAccordions)}
         >
             <Tabs value={tab} onClick={setTab}>
-                <Tab active roundedSide="left" value="1">
-                    <Text>Cпециальности</Text>
+                <Tab roundedSide="left" value="1">
+                    <Text size="m" color={tab === '1' ? 'white' : 'black'}>
+                        Cпециальности
+                    </Text>
                 </Tab>
                 <Tab roundedSide="right" value="2">
-                    <Text>Профессии</Text>
+                    <Text size="m" color={tab === '2' ? 'white' : 'black'}>
+                        Профессии
+                    </Text>
                 </Tab>
             </Tabs>
             {tab === '1' && (
@@ -75,7 +79,7 @@ export const SpecialtiesAccordions = () => {
             {tab === '2' && (
                 <Flex direction="vertical" className={styles.tabs}>
                     <Input
-                        placeholder="Поиск по специальностям"
+                        placeholder="Поиск по профессиям"
                         icon
                         border
                     />
