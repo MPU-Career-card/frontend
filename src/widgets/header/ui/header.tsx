@@ -45,7 +45,7 @@ export const Header = () => (
                     <Text
                         color="white"
                         size="s"
-                        to={Routes.MAIN}
+                        to={Routes.SPECIALITY}
                         caps
                     >
                         Специальности
