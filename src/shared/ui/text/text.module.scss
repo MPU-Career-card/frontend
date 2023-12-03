@@ -2,6 +2,11 @@
   text-align: start;
 }
 
+.breakWords {
+  width: 0;
+  overflow: visible;
+}
+
 .xs2 {
   font-size: var(--font-size-2xs);
   line-height: var(--font-line-2xs);
@@ -92,4 +97,8 @@
 
 .pink {
   color: #D790FF;
+}
+
+.greyTransparent {
+  color: #ffffff80;
 }

@@ -3,3 +3,96 @@
     background: #7F4E9B;
     padding: 64px;
 }
+
+.mapContainer {
+    position: relative;
+}
+
+.l {
+    zoom: 0.9;
+    -moz-transform: scale(0.9);
+}
+
+.m {
+    margin-right: 100px;
+    zoom: 0.9;
+    -moz-transform: scale(0.9);
+}
+
+.s {
+    margin-right: 100px;
+    zoom: 0.7;
+    -moz-transform: scale(0.7);
+}
+
+.xs {
+    margin-right: 80px;
+    zoom: 0.5;
+    -moz-transform: scale(0.5);
+}
+
+.firstPointer {
+    top: 290px;
+    left: -40px;
+    position: absolute;
+    div {
+        position: absolute;
+        top: 10px;
+        left: 90px;
+    }
+}
+
+.lastPointer {
+    top: -40px;
+    right: 22px;
+    position: absolute;
+    div {
+        position: absolute;
+        top: 20px;
+        left: 90px;
+    }
+}
+
+.thirdPointer {
+    top: 110px;
+    left: 150px;
+    position: absolute;
+    div {
+        position: absolute;
+        top: 20px;
+        left: -90px;
+    }
+}
+
+.forthPointer {
+    top: -20px;
+    left: 250px;
+    position: absolute;
+    div {
+        position: absolute;
+        top: 20px;
+        left: -90px;
+    }
+}
+
+.fivethPointer {
+    top: 105px;
+    left: 338px;
+    position: absolute;
+    div {
+        position: absolute;
+        top: 100px;
+        left: 0px;
+    }
+}
+
+.sixthPointer {
+    top: 90px;
+    right: -45px;
+    position: absolute;
+    div {
+        position: absolute;
+        top: 100px;
+        left: 50px;
+    }
+}
