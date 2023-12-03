@@ -15,6 +15,7 @@ export const Text: FC<TextProps> = ({
     view = 'gilroy',
     weight = 'regular',
     caps = false,
+    breakWords = false,
     to,
     className,
     children,
@@ -24,7 +25,7 @@ export const Text: FC<TextProps> = ({
         condition={!!to}
         wrapper={(children: ReactNode) => (
             <Link to={to!}>
-                {children }
+                {children}
             </Link>
         )}
     >
@@ -36,6 +37,7 @@ export const Text: FC<TextProps> = ({
                 styles[weight],
                 styles[color],
                 styles[view],
+                styles[breakWords ? 'breakWords' : ''],
             )}
             {...props}
         >
