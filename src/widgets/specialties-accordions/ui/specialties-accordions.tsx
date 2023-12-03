@@ -6,116 +6,75 @@ import {
 } from 'shared/ui';
 
 import React, { useState } from 'react';
+import data from 'pages/specialties/specialties.json';
 import styles from './specialties-accordions.module.scss';
+
+interface AccordionData {
+    tags: string[];
+    text: string;
+    cards: {
+      title: string;
+      text: string;
+      image: string;
+    }[];
+  }
+
+  interface TabData {
+    id: string;
+    label: string;
+    content: AccordionData[];
+  }
 
 export const SpecialtiesAccordions = () => {
     const [tab, setTab] = useState('1');
 
     return (
-        <div
-            className={cn(styles.specialtiesAccordions)}
-        >
+        <div className={cn(styles.specialtiesAccordions)}>
             <Tabs value={tab} onClick={setTab}>
-                <Tab roundedSide="left" value="1">
-                    <Text size="m" color={tab === '1' ? 'white' : 'black'}>
-                        Cпециальности
-                    </Text>
-                </Tab>
-                <Tab roundedSide="right" value="2">
-                    <Text size="m" color={tab === '2' ? 'white' : 'black'}>
-                        Профессии
-                    </Text>
-                </Tab>
+                {data.tabs.map((tabData) => (
+                    <Tab key={tabData.id} roundedSide={tabData.id === '1' ? 'left' : 'right'} value={tabData.id}>
+                        <Text size="m" color={tab === tabData.id ? 'white' : 'black'}>
+                            {tabData.label}
+                        </Text>
+                    </Tab>
+                ))}
             </Tabs>
-            {tab === '1' && (
-                <Flex direction="vertical" className={styles.tabs}>
-                    <Input
-                        placeholder="Поиск по специальностям"
-                        icon
-                        border
-                    />
-                    <Accordion
-                        tags={(
-                            <Flex gap={8}>
-                                <Tag
-                                    weight="semi"
-                                    color="orange"
-                                    textColor="white"
-                                >
-                                    ПИ
-                                </Tag>
-                                <Tag weight="medium">
-                                    29.03.03
-                                </Tag>
-                            </Flex>
-                        )}
-                        text="Дизайн и технологии производства визуального контента"
-                    >
-                        <Flex gap={24}>
-                            <Card
-                                title="Распределение задач между членами команды"
-                                text="Коммуникация — один из важных процессов, который обеспечивает успех проекта"
-                                image="a"
-                            />
-                            <Card
-                                title="Распределение задач между членами команды"
-                                text="Коммуникация — один из важных процессов, который обеспечивает успех проекта"
-                                image="a"
-                            />
-                            <Card
-                                title="Распределение задач между членами команды"
-                                text="Коммуникация — один из важных процессов, который обеспечивает успех проекта"
-                                image="a"
-                            />
-                            <Card
-                                title="Распределение задач между членами команды"
-                                text="Коммуникация — один из важных процессов, который обеспечивает успех проекта"
-                                image="a"
-                            />
-                        </Flex>
-                    </Accordion>
-                </Flex>
-            )}
-            {tab === '2' && (
-                <Flex direction="vertical" className={styles.tabs}>
-                    <Input
-                        placeholder="Поиск по профессиям"
-                        icon
-                        border
-                    />
-                    <Accordion
-                        tags={(
-                            <Flex gap={8}>
-                                <Tag
-                                    weight="semi"
-                                    color="orange"
-                                    textColor="white"
-                                >
-                                    ПИ
-                                </Tag>
-                                <Tag weight="medium">
-                                    29.03.03
-                                </Tag>
-                            </Flex>
-                        )}
-                        text="Дизайн и технологии производства визуального контента"
-                    >
-                        <Flex gap={24}>
-                            <Card
-                                title="Распределение задач между членами команды"
-                                text="Коммуникация"
-                                image="a"
-                            />
-                            <Card
-                                title="Распределение задач между членами команды"
-                                text="Коммуникация "
-                                image="a"
-                            />
-                        </Flex>
-                    </Accordion>
-                </Flex>
-            )}
 
+            {data.tabs.map((tabData) => (
+                // Render accordions based on the selected tab
+                tab === tabData.id && (
+                    <Flex key={tabData.id} direction="vertical" className={styles.tabs}>
+                        <Input placeholder={`Поиск по ${tabData.label.toLowerCase()}`} icon border />
+
+                        {tabData.content.map((accordionData: AccordionData, accordionIndex: number) => (
+                            <Accordion
+                                key={accordionData.text || accordionIndex}
+                                tags={(
+                                    <Flex gap={8}>
+                                        {accordionData.tags.map((tag: string, tagIndex: number) => (
+                                            <Tag
+                                                key={tag || tagIndex}
+                                                weight={tagIndex === 0 ? 'semi' : 'medium'}
+                                                color={tagIndex === 0 ? 'orange' : undefined}
+                                                textColor={tagIndex === 0 ? 'white' : undefined}
+                                            >
+                                                {tag}
+                                            </Tag>
+                                        ))}
+                                    </Flex>
+                                )}
+                                text={accordionData.text}
+                            >
+                                <Flex gap={24}>
+                                    {accordionData.cards.map((card: { title: string; text: string; image: string }) => (
+                                        <Card key={card.title} title={card.title} text={card.text} image={card.image} />
+                                    ))}
+                                </Flex>
+                            </Accordion>
+                        ))}
+                    </Flex>
+                )
+            ))}
         </div>
     );
 };
