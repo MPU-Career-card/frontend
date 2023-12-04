@@ -25,7 +25,7 @@ export const Map: FC<MapProps> = ({
                 Карьерный путь
             </Text>
             <Flex
-                marginTop={['xs', 's', 'm'].includes(sizeCategory) ? 50 : 0}
+                marginTop={['xs', 's', 'm'].includes(sizeCategory) ? 50 : 20}
                 direction={
                     ['xs', 's', 'm'].includes(sizeCategory)
                         ? 'vertical' : 'horizontal'
