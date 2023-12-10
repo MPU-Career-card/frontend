@@ -3,7 +3,7 @@ import {
 } from 'shared/ui';
 
 import React, { FC, useState } from 'react';
-import { cn } from 'shared/lib';
+import { cn, useWindowDimensions } from 'shared/lib';
 
 import { Routes } from 'shared/config';
 import { SpecialtiesProps } from './types';
@@ -14,6 +14,7 @@ export const Specialties: FC<SpecialtiesProps> = ({
     marginBottom,
 }) => {
     const [tab, setTab] = useState('1');
+    const sizeCategory = useWindowDimensions();
 
     return (
         <div
@@ -24,13 +25,20 @@ export const Specialties: FC<SpecialtiesProps> = ({
                 Программы обучения
             </Text>
             <div className={cn(styles.tabs)}>
-                <Tabs value={tab} onClick={setTab}>
-                    <Tab roundedSide="left" value="1">
+                <Tabs value={tab} onClick={setTab} small={['xs', 's', 'm'].includes(sizeCategory)}>
+                    <Tab
+                        roundedSide="left"
+                        rounded={['xs', 's', 'm'].includes(sizeCategory)}
+                        value="1"
+                    >
                         <Text size="m" color={tab === '1' ? 'white' : 'black'}>
                             Бакалавриат и специалитет
                         </Text>
                     </Tab>
-                    <Tab value="2">
+                    <Tab
+                        value="2"
+                        roundedSide={['xs', 's', 'm'].includes(sizeCategory) ? 'left' : ''}
+                    >
                         <Text size="m" color={tab === '2' ? 'white' : 'black'}>
                             Магистратура
                         </Text>
@@ -43,8 +51,20 @@ export const Specialties: FC<SpecialtiesProps> = ({
                 </Tabs>
             </div>
             {tab === '1' && (
-                <Flex gap={24} direction="vertical">
-                    <Flex gap={22}>
+                <Flex
+                    gap={24}
+                    direction={
+                        ['m', 'l'].includes(sizeCategory)
+                            ? 'horizontal' : 'vertical'
+                    }
+                >
+                    <Flex
+                        gap={22}
+                        direction={
+                            ['xs', 's', 'm', 'l'].includes(sizeCategory)
+                                ? 'vertical' : 'horizontal'
+                        }
+                    >
                         <SpecialityCard
                             to={Routes.MAIN}
                             faculty="Факультет экономики и управления"
@@ -73,7 +93,13 @@ export const Specialties: FC<SpecialtiesProps> = ({
                             period={4}
                         />
                     </Flex>
-                    <Flex gap={22}>
+                    <Flex
+                        gap={22}
+                        direction={
+                            ['xs', 's', 'm', 'l'].includes(sizeCategory)
+                                ? 'vertical' : 'horizontal'
+                        }
+                    >
                         <SpecialityCard
                             to={Routes.MAIN}
                             faculty="Факультет экономики и управления"

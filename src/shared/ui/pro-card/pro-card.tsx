@@ -14,6 +14,7 @@ export const ProCard: FC<ProCardProps> = ({
     header,
     tags,
     isResponsiveHeight = false,
+    isFullWidth = false,
 }) => {
     const textColor = useMemo(() => {
         if (['purple', 'blue'].includes(color)) {
@@ -32,7 +33,12 @@ export const ProCard: FC<ProCardProps> = ({
     }, [color]);
 
     return (
-        <CardLink to={to} color={color} isResponsiveHeight={isResponsiveHeight}>
+        <CardLink
+            to={to}
+            color={color}
+            isResponsiveHeight={isResponsiveHeight}
+            isFullWidth={isFullWidth}
+        >
             <Flex
                 className={styles.content}
                 align="start"

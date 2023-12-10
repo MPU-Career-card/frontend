@@ -4,9 +4,10 @@ import {
     Flex, Text, Card, Tabs, Tab, Input, Accordion, Tag,
 } from 'shared/ui';
 
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import data from 'pages/specialties/specialties.json';
 import styles from './specialties-accordions.module.scss';
+import { SpecialtiesAccordionsProps } from './types';
 
 interface AccordionData {
     tags: string[];
@@ -18,11 +19,14 @@ interface AccordionData {
     }[];
   }
 
-export const SpecialtiesAccordions = () => {
+export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
+    marginTop,
+    marginBottom,
+}) => {
     const [tab, setTab] = useState('1');
 
     return (
-        <div className={cn(styles.specialtiesAccordions)}>
+        <div className={cn(styles.specialtiesAccordions)} style={{ marginTop, marginBottom }}>
             <Tabs value={tab} onClick={setTab}>
                 {data.tabs.map((tabData) => (
                     <Tab

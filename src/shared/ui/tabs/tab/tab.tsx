@@ -11,12 +11,14 @@ export const Tab: FC<TabProps> = ({
     onClick,
     children,
     roundedSide,
+    rounded = false,
 }) => (
     <button
         className={cn(
             styles.tab,
             styles[active ? 'active' : ''],
             styles[roundedSide!],
+            styles[rounded ? 'rounded' : ''],
         )}
         type="button"
         onClick={onClick}

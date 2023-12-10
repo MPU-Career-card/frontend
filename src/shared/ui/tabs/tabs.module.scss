@@ -3,6 +3,18 @@
     gap: 8px;
 }
 
+.tabsSmall {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    button {
+        grid-column: span 1;
+    }
+    button:nth-child(1) {
+        grid-column: span 2;
+    }
+}
+
 .justify-start {
     justify-content: start;
 }

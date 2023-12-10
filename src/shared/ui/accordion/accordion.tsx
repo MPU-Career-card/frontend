@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 
 import { ArrowToggleIcon } from 'shared/icons';
 import { Flex, Text } from 'shared/ui';
-import { cn } from 'shared/lib';
+import { cn, useWindowDimensions } from 'shared/lib';
 
 import { AccordionProps } from './types';
 
@@ -15,7 +15,7 @@ export const Accordion: FC<AccordionProps> = ({
     className,
 }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-
+    const sizeCategory = useWindowDimensions();
     const toggleAccordion = () => {
         setIsOpen((isOpen) => !isOpen);
     };
@@ -26,15 +26,20 @@ export const Accordion: FC<AccordionProps> = ({
                 type="button"
                 onClick={toggleAccordion}
             >
-                <Flex gap={16}>
+                <Flex
+                    gap={16}
+                    justify="space-between"
+                >
                     {tags}
-                    <Text
-                        size="xl"
-                        weight="medium"
-                        className={styles.text}
-                    >
-                        {text}
-                    </Text>
+                    {!['xs'].includes(sizeCategory) && (
+                        <Text
+                            size="xl"
+                            weight="medium"
+                            className={styles.text}
+                        >
+                            {text}
+                        </Text>
+                    )}
                     <ArrowToggleIcon
                         className={cn(
                             styles.arrow,
@@ -44,6 +49,15 @@ export const Accordion: FC<AccordionProps> = ({
                         )}
                     />
                 </Flex>
+                {['xs'].includes(sizeCategory) && (
+                    <Text
+                        size="xl"
+                        weight="medium"
+                        className={styles.textBottom}
+                    >
+                        {text}
+                    </Text>
+                )}
             </button>
             {isOpen && (
                 <div className={styles.content}>

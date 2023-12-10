@@ -8,4 +8,5 @@ export type CardLinkProps = Omit<ComponentProps<'div'>, 'children'> & {
   highlight?: boolean;
   children: [ReactNode, ReactNode];
   isResponsiveHeight?: boolean;
+  isFullWidth?: boolean;
 }

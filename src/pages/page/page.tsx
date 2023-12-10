@@ -3,7 +3,7 @@ import { Header } from 'widgets';
 
 export const Page: FC<PropsWithChildren> = ({ children }) => (
     <>
-        <Header />
+        {/* <Header /> */}
         {children}
     </>
 );
