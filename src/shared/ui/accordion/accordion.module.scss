@@ -1,21 +1,21 @@
 .accordion {
-  margin: 32px 0 32px;
-  width: 100%;
+    margin: 32px 0;
+    width: 100%;
 }
 
 .text {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .content {
-  margin-top: 32px;
+    margin-top: 32px;
 }
 
 .arrow {
-  transform: rotate(0deg);
-  transition: all .2s ease-in-out;
+    transform: rotate(0deg);
+    transition: all 0.2s ease-in-out;
 }
 
 .open {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }

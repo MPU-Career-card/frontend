@@ -7,3 +7,4 @@ export { SpecialtiesAccordions } from './specialties-accordions';
 export { Partners } from './partners';
 export { Links } from './links';
 export { Footer } from './footer';
+export { Promo } from './promo';

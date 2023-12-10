@@ -1,41 +1,34 @@
 :root {
     // FONT FAMILY
-    --font-family-verdana: Verdana, arial, sans-serif;
-    --font-family-gilroy: Gilroy, arial, sans-serif;
-    --font-family-montserrat: Montserrat, arial, sans-serif;
+    --font-family-verdana: verdana, arial, sans-serif;
+    --font-family-gilroy: gilroy, arial, sans-serif;
+    --font-family-montserrat: montserrat, arial, sans-serif;
 
     // FONT SIZES
     --font-size-2xs: 11px;
     --font-line-2xs: 11px;
-
     --font-size-xs: 12px;
     --font-line-xs: 22px;
-
     --font-size-s: 14px;
     --font-line-s: 20px;
-
     --font-size-m: 16px;
     --font-line-m: 24px;
-
     --font-size-l: 20px;
     --font-line-l: 28px;
-
     --font-size-xl: 24px;
     --font-line-xl: 31.2px;
-
     --font-size-2xl: 36px;
     --font-line-2xl: 39.78px;
-
     --font-size-3xl: 64px;
     --font-line-3xl: 70.72px;
 
     // COLORS
-    --black: #000000;
-    --white: #FFFFFF;
-    --purple: #7F4E9B;
-    --blue: #596DAF;
-    --yellow: #D2E757;
-    --orange: #EB996E;
-    --silver: #E2E2E8;
-    --gray: #F3F3F6;
+    --black: #000;
+    --white: #fff;
+    --purple: #7f4e9b;
+    --blue: #596daf;
+    --yellow: #d2e757;
+    --orange: #eb996e;
+    --silver: #e2e2e8;
+    --gray: #f3f3f6;
 }

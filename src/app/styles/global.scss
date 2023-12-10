@@ -1,44 +1,44 @@
 // SHARED CLASSES
 
 .white {
-  background: var(--white);
+    background: var(--white);
 }
 
 .purple {
-  background: var(--purple);
+    background: var(--purple);
 }
 
 .blue {
-  background: var(--blue);
+    background: var(--blue);
 }
 
 .yellow {
-  background: var(--yellow);
+    background: var(--yellow);
 }
 
 .orange {
-  background: var(--orange);
+    background: var(--orange);
 }
 
 .silver {
-  background: var(--silver);
+    background: var(--silver);
 }
 
 .transparent {
-  background: transparent;
-  border: 1px var(--black) solid;
+    background: transparent;
+    border: 1px var(--black) solid;
 }
 
 .gray {
-  background: var(--gray);
+    background: var(--gray);
 }
 
 .black {
-  background-color: var(--black);
+    background-color: var(--black);
 }
 
 // GLOBAL STYLE
 
 body {
-  background: var(--gray);
+    background: var(--gray);
 }
