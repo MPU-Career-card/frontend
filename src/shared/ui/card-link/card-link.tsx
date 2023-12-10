@@ -13,8 +13,17 @@ export const CardLink: FC<CardLinkProps> = ({
     color,
     highlight = true,
     children,
+    isResponsiveHeight = false,
 }) => (
-    <div className={cn(styles.wrapper, color, className)}>
+    <div className={cn(
+        styles.wrapper,
+        color,
+        className,
+        {
+            [styles['is-responsive-height']]: isResponsiveHeight,
+        },
+    )}
+    >
         <div className={styles.header}>{children[0]}</div>
         <div className={styles.footer}>{children[1]}</div>
         <div className={highlight ? styles.highlightArrow : styles.arrow}>

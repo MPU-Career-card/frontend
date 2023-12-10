@@ -3,7 +3,7 @@ import {
     Flex, Text,
 } from 'shared/ui';
 
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { cn, useWindowDimensions } from 'shared/lib';
 import { CareerPointer } from 'shared/icons/careerPointer';
 import { MapProps } from './types';

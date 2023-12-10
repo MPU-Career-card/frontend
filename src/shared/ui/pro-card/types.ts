@@ -5,5 +5,6 @@ export type ProCardProps = {
   color: Color;
   header?: string;
   body?: string;
-  tags?: string[]
+  tags?: string[];
+  isResponsiveHeight?: boolean;
 }

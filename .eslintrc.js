@@ -41,6 +41,6 @@ module.exports = {
         'import/extensions': 'off',
         'no-unused-vars': 'warn',
         'no-shadow': 'off',
-        'max-len': ['error', { ignoreComments: true }],
+        'max-len': ['error', { ignoreComments: true, code: 100 }],
     },
 };
