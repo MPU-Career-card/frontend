@@ -26,14 +26,6 @@ export const Footer: FC<FooterProps> = ({
         <Link to={Routes.MAIN}>
             <Flex gap={8}>
                 <Logo />
-                <Text
-                    color="white"
-                    weight="bold"
-                    size="m"
-                    caps
-                >
-                    Карьерные карты
-                </Text>
             </Flex>
         </Link>
     </Flex>

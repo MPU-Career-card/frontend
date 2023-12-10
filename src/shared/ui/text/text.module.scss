@@ -1,104 +1,104 @@
 .text {
-  text-align: start;
+    text-align: start;
 }
 
 .breakWords {
-  width: 0;
-  overflow: visible;
+    width: 0;
+    overflow: visible;
 }
 
 .xs2 {
-  font-size: var(--font-size-2xs);
-  line-height: var(--font-line-2xs);
+    font-size: var(--font-size-2xs);
+    line-height: var(--font-line-2xs);
 }
 
 .xs {
-  font-size: var(--font-size-xs);
-  line-height: var(--font-line-xs);
+    font-size: var(--font-size-xs);
+    line-height: var(--font-line-xs);
 }
 
 .s {
-  font-size: var(--font-size-s);
-  line-height: var(--font-line-s);
+    font-size: var(--font-size-s);
+    line-height: var(--font-line-s);
 }
 
 .m {
-  font-size: var(--font-size-m);
-  line-height: var(--font-line-m);
+    font-size: var(--font-size-m);
+    line-height: var(--font-line-m);
 }
 
 .l {
-  font-size: var(--font-size-l);
-  line-height: var(--font-line-l);
+    font-size: var(--font-size-l);
+    line-height: var(--font-line-l);
 }
 
 .xl {
-  font-size: var(--font-size-xl);
-  line-height: var(--font-line-xl);
+    font-size: var(--font-size-xl);
+    line-height: var(--font-line-xl);
 }
 
 .xl2 {
-  font-size: var(--font-size-2xl);
-  line-height: var(--font-line-2xl);
+    font-size: var(--font-size-2xl);
+    line-height: var(--font-line-2xl);
 }
 
 .xl3 {
-  font-size: var(--font-size-3xl);
-  line-height: var(--font-line-3xl);
+    font-size: var(--font-size-3xl);
+    line-height: var(--font-line-3xl);
 }
 
 .regular {
-  font-weight: 400;
+    font-weight: 400;
 }
 
 .medium {
-  font-weight: 500;
+    font-weight: 500;
 }
 
 .semi {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .bold {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .verdana {
-  font-family: var(--font-family-verdana);
+    font-family: var(--font-family-verdana);
 }
 
 .gilroy {
-  font-family: var(--font-family-gilroy);
+    font-family: var(--font-family-gilroy);
 }
 
 .montserrat {
-  font-family: var(--font-family-montserrat);
+    font-family: var(--font-family-montserrat);
 }
 
 .black {
-  color: #000000;
+    color: #000;
 }
 
 .dark-gray {
-  color: #1E1E1E;
+    color: #1e1e1e;
 }
 
 .grey {
-  color: #9096A3;
+    color: #9096a3;
 }
 
 .white {
-  color: #FFFFFF;
+    color: #fff;
 }
 
 .purple {
-  color: #536DB4;
+    color: #536db4;
 }
 
 .pink {
-  color: #D790FF;
+    color: #d790ff;
 }
 
 .greyTransparent {
-  color: #ffffff80;
+    color: #ffffff80;
 }

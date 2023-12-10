@@ -1,19 +1,19 @@
 .tab {
-  display: flex;
-  padding: 16px 24px;
-  justify-content: center;
-  align-items: center;
-  background: #e2e2e8;
+    display: flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    background: #e2e2e8;
 }
 
 .active {
-  background: #596daf;
+    background: #596daf;
 }
 
 .left {
-  border-radius: 100px 0 0 100px;
+    border-radius: 100px 0 0 100px;
 }
 
 .right {
-  border-radius: 0 100px 100px 0;
+    border-radius: 0 100px 100px 0;
 }
