@@ -1,1 +1,1 @@
-export type Mods = Record<string, string | number | boolean>;
+export type Mods = Record<string, string | number | boolean | undefined>;

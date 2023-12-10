@@ -11,4 +11,5 @@ export type SpecialityCardProps = {
   passingScore: SpecialityProperty;
   budgetPlacesCount: SpecialityProperty;
   period: number;
+  isResponsiveHeight?: boolean;
 }
