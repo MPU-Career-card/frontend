@@ -10,4 +10,5 @@ export type TabsProps = Omit<ComponentProps<'div'>, 'onClick'> & {
     | 'space-evenly';
   value: string;
   onClick: React.Dispatch<React.SetStateAction<string>>;
+  small?: boolean;
 };

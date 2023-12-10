@@ -14,6 +14,7 @@ export const CardLink: FC<CardLinkProps> = ({
     highlight = true,
     children,
     isResponsiveHeight = false,
+    isFullWidth = false,
 }) => (
     <div className={cn(
         styles.wrapper,
@@ -21,6 +22,7 @@ export const CardLink: FC<CardLinkProps> = ({
         className,
         {
             [styles['is-responsive-height']]: isResponsiveHeight,
+            [styles['is-full-width']]: isFullWidth,
         },
     )}
     >

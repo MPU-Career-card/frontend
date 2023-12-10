@@ -13,6 +13,7 @@ export const Tabs: FC<TabsProps> = ({
     value,
     children,
     onClick,
+    small = false,
 }) => {
     const childrenArray = React.Children
         .toArray(children) as ReactElement[];
@@ -20,6 +21,7 @@ export const Tabs: FC<TabsProps> = ({
     return (
         <div className={cn(
             styles.tabs,
+            styles[small ? 'tabsSmall' : ''],
             styles[`justify-${justify}`],
         )}
         >
