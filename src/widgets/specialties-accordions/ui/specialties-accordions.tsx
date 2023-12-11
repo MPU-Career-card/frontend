@@ -24,6 +24,15 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
     marginBottom,
 }) => {
     const [tab, setTab] = useState('1');
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const filteredTabs = data.tabs.map((tabData) => ({
+        ...tabData,
+        content: tabData.content.filter((accordionData) =>
+            // eslint-disable-next-line implicit-arrow-linebreak
+            accordionData.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+            || accordionData.text.toLowerCase().includes(searchTerm.toLowerCase())),
+    }));
 
     return (
         <div className={cn(styles.specialtiesAccordions)} style={{ marginTop, marginBottom }}>
@@ -44,7 +53,7 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
                 ))}
             </Tabs>
 
-            {data.tabs.map((tabData) => (
+            {filteredTabs.map((tabData) => (
                 // Render accordions based on the selected tab
                 tab === tabData.id && (
                     <Flex
@@ -58,6 +67,8 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
                             }
                             icon
                             border
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
                         />
                         {tabData.content.map((
                             accordionData: AccordionData,
