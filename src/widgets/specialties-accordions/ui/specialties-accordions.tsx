@@ -4,7 +4,7 @@ import {
     Flex, Text, Card, Tabs, Tab, Input, Accordion, Tag,
 } from 'shared/ui';
 
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import data from 'pages/specialties/specialties.json';
 import styles from './specialties-accordions.module.scss';
 import { SpecialtiesAccordionsProps } from './types';
@@ -17,7 +17,7 @@ interface AccordionData {
       text: string;
       image: string;
     }[];
-  }
+}
 
 export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
     marginTop,
@@ -28,11 +28,15 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
 
     const filteredTabs = data.tabs.map((tabData) => ({
         ...tabData,
-        content: tabData.content.filter((accordionData) =>
-            // eslint-disable-next-line implicit-arrow-linebreak
-            accordionData.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+        content: tabData.content.filter((accordionData) => accordionData.tags.some(
+            (tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()),
+        )
             || accordionData.text.toLowerCase().includes(searchTerm.toLowerCase())),
     }));
+
+    // useEffect(() => {
+    //     filteredTabs = ...
+    // }, [searchTerm]);
 
     return (
         <div className={cn(styles.specialtiesAccordions)} style={{ marginTop, marginBottom }}>
@@ -54,7 +58,6 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
             </Tabs>
 
             {filteredTabs.map((tabData) => (
-                // Render accordions based on the selected tab
                 tab === tabData.id && (
                     <Flex
                         key={tabData.id}
