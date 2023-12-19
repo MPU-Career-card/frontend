@@ -10,7 +10,13 @@ import styles from './specialties-accordions.module.scss';
 import { SpecialtiesAccordionsProps } from './types';
 
 interface AccordionData {
-    tags: string[];
+    tags: {
+        id: string;
+        color: string;
+        text: string;
+        textColor: string;
+        width: string;
+      }[];
     text: string;
     cards: {
       title: string;
@@ -25,17 +31,26 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
 }) => {
     const [tab, setTab] = useState('1');
     const [searchTerm, setSearchTerm] = useState('');
+
     const [filteredTabs, setFilteredTabs] = useState(data.tabs);
 
     useEffect(() => {
-        // Фильтрация данных при изменении searchTerm
-        const updatedTabs = data.tabs.map((tabData) => ({
-            ...tabData,
-            // eslint-disable-next-line max-len
-            content: tabData.content.filter((accordionData) => accordionData.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-                || accordionData.text.toLowerCase().includes(searchTerm.toLowerCase())),
-        }));
-        setFilteredTabs(updatedTabs);
+        // Функция для фильтрации данных по введенному поисковому запросу
+        const filterData = () => {
+            const filteredData = data.tabs.map((tabData) => {
+                // eslint-disable-next-line max-len
+                const filteredContent = tabData.content.filter((accordionData: AccordionData) => accordionData.text.toLowerCase().includes(searchTerm.toLowerCase()));
+
+                return {
+                    ...tabData,
+                    content: filteredContent,
+                };
+            });
+
+            setFilteredTabs(filteredData);
+        };
+
+        filterData();
     }, [searchTerm]);
 
     return (
@@ -76,23 +91,21 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
                         />
                         {tabData.content.map((
                             accordionData: AccordionData,
-                            accordionIndex: number,
                         ) => (
                             <Accordion
-                                key={accordionData.text || accordionIndex}
+                                key={accordionData.text}
                                 tags={(
                                     <Flex gap={8}>
                                         {accordionData.tags.map((
-                                            tag: string,
-                                            tagIndex: number,
+                                            tag,
                                         ) => (
                                             <Tag
-                                                key={tag || tagIndex}
-                                                weight={tagIndex === 0 ? 'semi' : 'medium'}
-                                                color={tagIndex === 0 ? 'orange' : undefined}
-                                                textColor={tagIndex === 0 ? 'white' : undefined}
+                                                key={tag.id}
+                                                color={tag.color}
+                                                textColor={tag.textColor}
+                                                width={tag.width}
                                             >
-                                                {tag}
+                                                {tag.text}
                                             </Tag>
                                         ))}
                                     </Flex>

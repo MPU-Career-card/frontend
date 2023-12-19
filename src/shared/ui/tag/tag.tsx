@@ -13,6 +13,7 @@ export const Tag: FC<TagProps> = ({
     textColor = 'black',
     size = 'm',
     weight = 'regular',
+    width = 'right',
     view = 'gilroy',
     caps,
     ...props
@@ -20,6 +21,7 @@ export const Tag: FC<TagProps> = ({
     <div
         className={cn(
             color,
+            styles[width],
             styles[size],
             styles.tag,
         )}
