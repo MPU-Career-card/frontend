@@ -4,14 +4,15 @@ import {
     Flex, Text, Card, Tabs, Tab, Input, Accordion, Tag,
 } from 'shared/ui';
 
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import data from 'pages/specialties/specialties.json';
 import styles from './specialties-accordions.module.scss';
 import { SpecialtiesAccordionsProps } from './types';
 
 interface AccordionData {
+    id: number;
     tags: {
-        id: string;
+        id: number;
         color: string;
         text: string;
         textColor: string;
@@ -19,6 +20,7 @@ interface AccordionData {
       }[];
     text: string;
     cards: {
+      id: number;
       title: string;
       text: string;
       image: string;
@@ -31,31 +33,37 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
 }) => {
     const [tab, setTab] = useState('1');
     const [searchTerm, setSearchTerm] = useState('');
-
     const [filteredTabs, setFilteredTabs] = useState(data.tabs);
 
-    useEffect(() => {
-        // Функция для фильтрации данных по введенному поисковому запросу
-        const filterData = () => {
-            const filteredData = data.tabs.map((tabData) => {
-                // eslint-disable-next-line max-len
-                const filteredContent = tabData.content.filter((accordionData: AccordionData) => accordionData.text.toLowerCase().includes(searchTerm.toLowerCase()));
+    const handleInputChange = (e: any) => {
+        const searchTerm = e.target.value;
+        setSearchTerm(searchTerm);
 
-                return {
-                    ...tabData,
-                    content: filteredContent,
-                };
-            });
+        const filteredData = data.tabs.map((tabData) => {
+            const filteredContent = tabData.content.filter(
+                (accordionData: AccordionData) => accordionData.text.toLowerCase()
+                    .includes(searchTerm.toLowerCase()),
+            );
+            return {
+                ...tabData,
+                content: filteredContent,
+            };
+        });
+        setFilteredTabs(filteredData);
+    };
 
-            setFilteredTabs(filteredData);
-        };
-
-        filterData();
-    }, [searchTerm]);
+    const handleTabChange = (e: any) => {
+        if (e === tab) {
+            return;
+        }
+        setTab(e);
+        setSearchTerm('');
+        setFilteredTabs(data.tabs);
+    };
 
     return (
         <div className={cn(styles.specialtiesAccordions)} style={{ marginTop, marginBottom }}>
-            <Tabs value={tab} onClick={setTab}>
+            <Tabs value={tab} onClick={handleTabChange}>
                 {data.tabs.map((tabData) => (
                     <Tab
                         key={tabData.id}
@@ -73,7 +81,6 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
             </Tabs>
 
             {filteredTabs.map((tabData) => (
-                // Render accordions based on the selected tab
                 tab === tabData.id && (
                     <Flex
                         key={tabData.id}
@@ -87,13 +94,13 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
                             icon
                             border
                             value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
+                            onChange={handleInputChange}
                         />
                         {tabData.content.map((
                             accordionData: AccordionData,
                         ) => (
                             <Accordion
-                                key={accordionData.text}
+                                key={accordionData.id}
                                 tags={(
                                     <Flex gap={8}>
                                         {accordionData.tags.map((
@@ -115,13 +122,14 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
                                 <Flex gap={24}>
                                     {accordionData.cards.map((
                                         card: {
+                                          id: number;
                                           title: string;
                                           text: string;
-                                          image: string
+                                          image: string;
                                         },
                                     ) => (
                                         <Card
-                                            key={card.title}
+                                            key={card.id}
                                             title={card.title}
                                             text={card.text}
                                             image={card.image}

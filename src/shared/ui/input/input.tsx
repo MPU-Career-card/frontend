@@ -14,6 +14,7 @@ export const Input: FC<InputProps> = ({
     border = false,
     placeholder,
     icon = false,
+    onChange,
 }) => (
     <div className={cn(
         styles.inputWrapper,
@@ -31,6 +32,7 @@ export const Input: FC<InputProps> = ({
             )}
             placeholder={placeholder}
             type={type}
+            onChange={onChange}
         />
     </div>
 );
