@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
     <StrictMode>
-        <BrowserRouter>
+        <BrowserRouter basename="/frontend">
             <App />
         </BrowserRouter>
     </StrictMode>,
