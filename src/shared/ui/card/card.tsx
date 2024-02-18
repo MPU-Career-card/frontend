@@ -1,13 +1,11 @@
 import { FC } from 'react';
 
-import { cn } from 'shared/lib';
-import { Logo } from 'shared/icons';
 import { Text } from '../text';
+import { Flex } from '../flex';
 
 import { CardProps } from './types';
 
 import styles from './card.module.scss';
-import { Flex } from '../flex';
 
 export const Card: FC<CardProps> = ({
     text,
@@ -16,12 +14,10 @@ export const Card: FC<CardProps> = ({
     height,
 }) => (
     <div
-        className={
-            cn(styles.card)
-        }
+        className={styles.card}
         style={{ height }}
     >
-        {title || image ? (
+        {(title || image) && (
             <Flex gap={8}>
                 {title && (
                     <Text
@@ -32,13 +28,13 @@ export const Card: FC<CardProps> = ({
                         {title}
                     </Text>
                 )}
-                {image && <Logo />}
+                {image && <img src={image} alt={title} />}
             </Flex>
-        ) : null}
-        {text ? (
+        )}
+        {text && (
             <Text color="black" size="xs" weight="regular">
                 {text}
             </Text>
-        ) : null}
+        )}
     </div>
 );

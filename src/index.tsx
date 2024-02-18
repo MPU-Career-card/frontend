@@ -13,9 +13,7 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-    <StrictMode>
-        <BrowserRouter basename="/frontend">
-            <App />
-        </BrowserRouter>
-    </StrictMode>,
+    <BrowserRouter basename="/frontend">
+        <App />
+    </BrowserRouter>,
 );

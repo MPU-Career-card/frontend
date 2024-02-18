@@ -1,0 +1,18 @@
+.wrapper {
+  background: var(--purple);
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.widget {
+  background: var(--white);
+  padding: 48px 64px;
+  border-radius: 24px;
+  width: 50%;
+}
+
+.image {
+  padding: 64px 36px 88px 64px;
+  width: 50%;
+}

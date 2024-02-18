@@ -9,7 +9,7 @@ import styles from './button.module.scss';
 export const Button: FC<ButtonProps> = ({
     color = 'black',
     size = 'm',
-    border = false,
+    rounded = false,
     children,
     ...props
 }) => (
@@ -17,8 +17,10 @@ export const Button: FC<ButtonProps> = ({
         className={cn(
             styles.button,
             styles[size],
-            styles[color],
-            styles[border ? 'border' : ''],
+            color,
+            {
+                [styles.rounded]: rounded,
+            },
         )}
         type="button"
         {...props}

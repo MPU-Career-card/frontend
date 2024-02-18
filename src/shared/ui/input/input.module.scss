@@ -1,20 +1,35 @@
-.inputWrapper {
-    height: 64px;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    padding: 0 32px;
-    gap: 16px;
-    width: 100%;
-}
+.rounded {
+  height: 64px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  gap: 16px;
+  width: 100%;
+  border: 1px solid rgb(164 164 175 / 50%);
 
-.input {
+  input {
     color: #a4a4af;
     width: 100%;
     background: transparent;
     font-family: var(--font-family-gilroy);
+  }
 }
 
-.border {
-    border: 1px solid rgb(164 164 175 / 50%);
+.outlined {
+  border-bottom: 1px solid var(--white);
+  padding: 12px 0 2px;
+
+  input {
+    border: none;
+    background: transparent;
+    color: var(--white);
+    font-family: var(--font-family-gilroy);
+    font-size: var(--font-size-s);
+    line-height: var(--font-line-s);
+
+    &::placeholder {
+      color: var(--white);
+    }
+  }
 }

@@ -7,7 +7,7 @@ export type TextProps = Omit<ComponentProps<TagType>, 'children'> & {
   tag?: TagType;
   view?: 'gilroy' | 'verdana' | 'montserrat';
   color?: 'black' | 'white' | 'purple' | 'dark-gray' | 'grey' | 'pink'
-  | 'greyTransparent';
+  | 'greyTransparent' | 'blue';
   size?: 'xs2' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xl2' | 'xl3';
   weight?: 'regular' | 'medium' | 'semi' | 'bold';
   caps?: boolean;

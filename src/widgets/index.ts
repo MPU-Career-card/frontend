@@ -8,3 +8,5 @@ export { Partners } from './partners';
 export { Links } from './links';
 export { Footer } from './footer';
 export { Promo } from './promo';
+export { Vacancies } from './vacancies';
+export { Feedback } from './feedback';

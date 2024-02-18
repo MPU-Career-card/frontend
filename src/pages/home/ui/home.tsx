@@ -1,7 +1,15 @@
 import {
-    Scroll, Map, Cards, Specialties, Partners, Links, Footer, Promo,
+    Scroll,
+    Map,
+    Cards,
+    Specialties,
+    Partners,
+    Links,
+    Footer,
+    Promo,
+    Vacancies,
+    Feedback,
 } from 'widgets';
-
 import { Container } from 'shared/ui';
 
 const HomePage = () => (
@@ -21,9 +29,10 @@ const HomePage = () => (
         <Map marginTop={100} marginBottom={100} pointers={4} />
         <Cards marginTop={100} marginBottom={100} />
         <Specialties marginTop={100} marginBottom={100} />
+        <Vacancies />
         <Partners marginTop={100} marginBottom={100} />
-        <Links marginTop={100} marginBottom={64} />
-        <Footer />
+        <Links marginTop={100} marginBottom={100} />
+        <Feedback />
     </Container>
 );
 
