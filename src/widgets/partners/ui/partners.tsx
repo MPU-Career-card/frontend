@@ -2,7 +2,7 @@ import {
     Flex, Text, ProCard, Card,
 } from 'shared/ui';
 
-import { cn, useWindowDimensions } from 'shared/lib';
+import { useWindowDimensions } from 'shared/lib';
 import React, { FC } from 'react';
 import { Routes } from 'shared/config';
 import { PartnersProps } from './types';
@@ -13,6 +13,7 @@ export const Partners: FC<PartnersProps> = ({
     marginBottom,
 }) => {
     const sizeCategory = useWindowDimensions();
+
     return (
         <Flex
             className={styles.partners}
@@ -43,9 +44,12 @@ export const Partners: FC<PartnersProps> = ({
                             ['xs', 's'].includes(sizeCategory) ? 'vertical' : 'horizontal'
                         }
                     >
-                        <Card image="d" />
-                        <Card image="d" />
-                        <Card image="d" />
+                        <Card height={128} image={`${process.env.PUBLIC_URL}/assets/mts.png`} />
+                        <Card height={128} image={`${process.env.PUBLIC_URL}/assets/sber.png`} />
+                        <Card
+                            height={128}
+                            image={`${process.env.PUBLIC_URL}/assets/association.png`}
+                        />
                     </Flex>
                     <Flex
                         gap={24}
@@ -53,13 +57,14 @@ export const Partners: FC<PartnersProps> = ({
                             ['xs', 's'].includes(sizeCategory) ? 'vertical' : 'horizontal'
                         }
                     >
-                        <Card image="d" />
-                        <Card image="d" />
-                        <Card image="d" />
+                        <Card height={128} image={`${process.env.PUBLIC_URL}/assets/wb.png`} />
+                        <Card height={128} image={`${process.env.PUBLIC_URL}/assets/mts.png`} />
+                        <Card height={128} image={`${process.env.PUBLIC_URL}/assets/sber.png`} />
                     </Flex>
                 </Flex>
                 <ProCard
                     isFullWidth
+                    isFullHeight
                     to={Routes.MAIN}
                     color="blue"
                     header="Все партнёры Московского Политеха"

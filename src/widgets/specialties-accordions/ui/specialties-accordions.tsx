@@ -1,13 +1,23 @@
-import { cn } from 'shared/lib';
+import React, { FC, useState } from 'react';
 
 import {
-    Flex, Text, Card, Tabs, Tab, Input, Accordion, Tag,
+    Flex,
+    Text,
+    Card,
+    Tabs,
+    Tab,
+    Input,
+    Accordion,
+    Tag,
 } from 'shared/ui';
+import { SearchIcon } from 'shared/icons';
+import { cn } from 'shared/lib';
 
-import React, { FC, useState } from 'react';
 import data from 'pages/specialties/specialties.json';
-import styles from './specialties-accordions.module.scss';
+
 import { SpecialtiesAccordionsProps } from './types';
+
+import styles from './specialties-accordions.module.scss';
 
 interface AccordionData {
     tags: string[];
@@ -53,11 +63,10 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
                         className={styles.tabs}
                     >
                         <Input
+                            icon={<SearchIcon />}
                             placeholder={
                                 `Поиск по ${tabData.label.toLowerCase()}`
                             }
-                            icon
-                            border
                         />
                         {tabData.content.map((
                             accordionData: AccordionData,

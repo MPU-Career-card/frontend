@@ -11,7 +11,7 @@ import styles from './pagination.module.scss';
 export const Pagination: FC<PaginationProps> = ({ pages }) => (
     <div className={cn(styles.pagination)}>
         <Flex justify="space-between">
-            <Button size="m">
+            <Button rounded size="m">
                 <LeftArrowIcon />
             </Button>
             <div
@@ -23,7 +23,7 @@ export const Pagination: FC<PaginationProps> = ({ pages }) => (
             >
                 <Flex gap={2}>
                     {Array.from(Array(pages), (_, i) => (
-                        <Button size="s" key={i}>
+                        <Button rounded size="s" key={i}>
                             <Text size="xs" color="grey">
                                 {i.toString()}
                             </Text>
@@ -31,7 +31,7 @@ export const Pagination: FC<PaginationProps> = ({ pages }) => (
                     ))}
                 </Flex>
             </div>
-            <Button size="m">
+            <Button rounded size="m">
                 <RightArrowIcon />
             </Button>
         </Flex>

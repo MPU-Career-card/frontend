@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
+
     return {
         width,
         height,
@@ -24,7 +25,6 @@ function getSizeCategory(width: number) {
 }
 
 export function useWindowDimensions() {
-    // eslint-disable-next-line max-len
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
     useEffect(() => {
@@ -33,10 +33,9 @@ export function useWindowDimensions() {
         }
 
         window.addEventListener('resize', handleResize);
+
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const sizeCategory = getSizeCategory(windowDimensions.width);
-
-    return sizeCategory;
+    return getSizeCategory(windowDimensions.width);
 }

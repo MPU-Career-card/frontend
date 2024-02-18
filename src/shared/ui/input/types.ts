@@ -1,10 +1,9 @@
-import { ComponentProps } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 
 export type InputProps = ComponentProps<'input'> & {
   value?: string;
-  size?: 'xs' | 's' | 'm' | 'l';
-  align?: 'center' | 'start' | 'end';
   border?: boolean;
   placeholder?: string;
-  icon?: boolean;
+  icon?: ReactNode;
+  variant?: 'rounded' | 'outlined'
 };
