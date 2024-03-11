@@ -103,3 +103,22 @@
         box-shadow: 0 24px 0 var(--gray);
     }
 }
+
+@media (max-width: 850px) {
+  .description {
+    position: absolute;
+    top: 115px;
+    left: 32px;
+    max-height: fit-content;
+  }
+}
+
+@media (max-width: 495px) {
+  .title {
+    width: 180px;
+  }
+
+  .decorative {
+    width: 240px;
+  }
+}

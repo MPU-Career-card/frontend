@@ -2,12 +2,15 @@ import React, { CSSProperties, FC } from 'react';
 
 import { Text } from 'shared/ui';
 import { Logo } from 'shared/icons';
+import { useWindowDimensions } from 'shared/lib';
 
 import { PromoProps } from './types';
 
 import styles from './promo.module.scss';
 
 export const Promo: FC<PromoProps> = ({ image, title, description }) => {
+    const size = useWindowDimensions({ xs: 495 });
+
     const style: CSSProperties = {
         backgroundImage: `url(${image})`,
     };
@@ -18,7 +21,7 @@ export const Promo: FC<PromoProps> = ({ image, title, description }) => {
                 <Logo />
             </div>
             <div className={styles.title}>
-                <Text size="xl3" weight="medium">
+                <Text size={size === 'xs' ? 'xl' : 'xl3'} weight="medium">
                     {title}
                 </Text>
             </div>

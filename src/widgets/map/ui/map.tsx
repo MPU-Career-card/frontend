@@ -1,12 +1,12 @@
 /* eslint-disable max-len */
-import {
-    Flex, Text,
-} from 'shared/ui';
+import { Flex, Text } from 'shared/ui';
 
 import React, { FC } from 'react';
 import { cn, useWindowDimensions } from 'shared/lib';
 import { CareerPointer } from 'shared/icons/careerPointer';
+
 import { MapProps } from './types';
+
 import styles from './map.module.scss';
 
 export const Map: FC<MapProps> = ({
@@ -69,7 +69,6 @@ export const Map: FC<MapProps> = ({
                             <Text size="l" color="greyTransparent" breakWords>Директор по продукту</Text>
                         </div>
                     )}
-
                     <svg xmlns="http://www.w3.org/2000/svg" width="537" height="352" viewBox="0 0 537 352" fill="none">
                         <path d="M10.0586 350.594C10.0586 350.594 -38.3476 216.094 89.2042 216.094C377.35 216.094 3.18767 61.5525 274.373 62.8458C545.559 64.1391 221.204 194.094 461.204 194.094C649.704 194.094 418.704 50.0946 461.205 0.595122" stroke="white" strokeLinecap="round" strokeDasharray="16 16" />
                     </svg>

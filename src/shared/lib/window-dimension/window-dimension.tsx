@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { Size, SizeSchema } from './types';
+
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
 
@@ -9,23 +11,21 @@ function getWindowDimensions() {
     };
 }
 
-function getSizeCategory(width: number) {
-    if (width < 576) {
-        return 'xs';
-    } if (width < 768) {
-        return 's';
-    } if (width < 992) {
-        return 'm';
-    } if (width < 1200) {
-        return 'l';
-    } if (width < 1400) {
-        return 'xl';
-    }
-    return 'xxl';
-}
+const defaultSizeSchema: SizeSchema = {
+    xs: 576,
+    s: 768,
+    m: 992,
+    l: 1200,
+    xl: 1400,
+};
 
-export function useWindowDimensions() {
+export function useWindowDimensions(schema?: SizeSchema) {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+    const sizeSchema: SizeSchema = {
+        ...defaultSizeSchema,
+        ...schema,
+    };
 
     useEffect(() => {
         function handleResize() {
@@ -37,5 +37,12 @@ export function useWindowDimensions() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    return getSizeCategory(windowDimensions.width);
+    for (const key in sizeSchema) {
+        // @ts-ignore
+        if (windowDimensions.width < sizeSchema[key]) {
+            return key;
+        }
+    }
+
+    return 'xxl';
 }

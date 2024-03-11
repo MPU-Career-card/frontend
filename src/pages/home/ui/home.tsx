@@ -5,7 +5,6 @@ import {
     Specialties,
     Partners,
     Links,
-    Footer,
     Promo,
     Vacancies,
     Feedback,

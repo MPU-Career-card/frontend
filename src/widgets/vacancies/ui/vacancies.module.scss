@@ -13,6 +13,22 @@
 }
 
 .image {
+  display: flex;
+  align-items: center;
   padding: 64px 36px 88px 64px;
   width: 50%;
+}
+
+@media (max-width: 860px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .widget {
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+  }
 }
