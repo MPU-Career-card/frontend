@@ -13,4 +13,5 @@ export type TextProps = Omit<ComponentProps<TagType>, 'children'> & {
   caps?: boolean;
   to?: string;
   breakWords?: boolean;
+  zIndex?: number;
 };

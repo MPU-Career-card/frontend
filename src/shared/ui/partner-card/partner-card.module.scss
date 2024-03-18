@@ -1,0 +1,13 @@
+.card {
+  border-radius: 24px;
+  padding: 24px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 128px;
+}
+
+.image {
+  max-width: 150px;
+}

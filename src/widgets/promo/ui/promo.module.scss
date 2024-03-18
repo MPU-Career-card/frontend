@@ -1,4 +1,6 @@
 .promo {
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
     height: 785px;
     border-radius: 24px;
@@ -86,7 +88,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 445px;
+    width: 500px;
     height: 60px;
     background: var(--gray);
     border-top-right-radius: 24px;

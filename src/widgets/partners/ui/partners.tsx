@@ -1,5 +1,8 @@
 import {
-    Flex, Text, ProCard, Card,
+    Flex,
+    Text,
+    ProCard,
+    Card, PartnerCard,
 } from 'shared/ui';
 
 import { useWindowDimensions } from 'shared/lib';
@@ -28,6 +31,7 @@ export const Partners: FC<PartnersProps> = ({
             </Text>
             <Flex
                 className={styles.partnersContent}
+                align="stretch"
                 gap={24}
                 direction={
                     ['xs', 's', 'm', 'l'].includes(sizeCategory)
@@ -35,36 +39,52 @@ export const Partners: FC<PartnersProps> = ({
                 }
             >
                 <Flex
+                    align="stretch"
                     gap={24}
                     direction={['s'].includes(sizeCategory) ? 'horizontal' : 'vertical'}
                 >
                     <Flex
+                        align="stretch"
                         gap={24}
                         direction={
                             ['xs', 's'].includes(sizeCategory) ? 'vertical' : 'horizontal'
                         }
                     >
-                        <Card height={128} image={`${process.env.PUBLIC_URL}/assets/mts.png`} />
-                        <Card height={128} image={`${process.env.PUBLIC_URL}/assets/sber.png`} />
-                        <Card
-                            height={128}
-                            image={`${process.env.PUBLIC_URL}/assets/association.png`}
+                        <PartnerCard
+                            to="https://www.mosobl.kp.ru/"
+                            image={`${process.env.PUBLIC_URL}/assets/kp.jpg`}
+                        />
+                        <PartnerCard
+                            to="https://mdk-arbat.ru/"
+                            image={`${process.env.PUBLIC_URL}/assets/mdk.png`}
+                        />
+                        <PartnerCard
+                            to="http://ripol.ru/"
+                            image={`${process.env.PUBLIC_URL}/assets/ripol.svg`}
                         />
                     </Flex>
                     <Flex
+                        align="stretch"
                         gap={24}
                         direction={
                             ['xs', 's'].includes(sizeCategory) ? 'vertical' : 'horizontal'
                         }
                     >
-                        <Card height={128} image={`${process.env.PUBLIC_URL}/assets/wb.png`} />
-                        <Card height={128} image={`${process.env.PUBLIC_URL}/assets/mts.png`} />
-                        <Card height={128} image={`${process.env.PUBLIC_URL}/assets/sber.png`} />
+                        <PartnerCard
+                            to="https://rg.ru/"
+                            image={`${process.env.PUBLIC_URL}/assets/rg.png`}
+                        />
+                        <PartnerCard
+                            to="https://vm.ru/"
+                            image={`${process.env.PUBLIC_URL}/assets/vm.svg`}
+                        />
+                        <PartnerCard
+                            to="https://www.biblio-globus.ru/"
+                            image={`${process.env.PUBLIC_URL}/assets/globus.png`}
+                        />
                     </Flex>
                 </Flex>
                 <ProCard
-                    isFullWidth
-                    isFullHeight
                     to={Routes.MAIN}
                     color="blue"
                     header="Все партнёры Московского Политеха"

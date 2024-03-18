@@ -12,10 +12,11 @@ export const Card: FC<CardProps> = ({
     title,
     image,
     height,
+    width,
 }) => (
     <div
         className={styles.card}
-        style={{ height }}
+        style={{ minHeight: height, minWidth: width }}
     >
         {(title || image) && (
             <Flex gap={8}>

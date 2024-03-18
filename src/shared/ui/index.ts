@@ -17,3 +17,4 @@ export { ProCard } from './pro-card';
 export { SpecialityCard } from './speciality-card';
 export { Accordion } from './accordion';
 export { FormInput, type FormInputProps } from './form-input';
+export { PartnerCard, type PartnerCardProps } from './partner-card';
