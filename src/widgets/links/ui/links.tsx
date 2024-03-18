@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 import {
     Flex, Text, CardLink,
 } from 'shared/ui';
@@ -37,13 +39,12 @@ export const Links: FC<LinksProps> = ({
                 }
             >
                 <CardLink
-                    to={Routes.MAIN}
+                    to="https://profitworks.com.ua/ru/professii-ru/sredstva-massovoj-informatsii/korrespondent&sa=D&source=docs&ust=1710754776268138&usg=AOvVaw2u5jdSeO-oLB5iHJmV6i0M"
                     color="yellow"
                     highlight={false}
                 >
                     <Text size="m" weight="semi">
-                        Все партнёры
-                        Московского Политеха
+                        Все о профессии корреспондента
                     </Text>
                     <Text>
                         Пара слов о трудоустройстве студентов
@@ -51,13 +52,12 @@ export const Links: FC<LinksProps> = ({
                     </Text>
                 </CardLink>
                 <CardLink
-                    to={Routes.MAIN}
+                    to="https://news.pressfeed.ru/bolshoj-gajd-po-professii-zhurnalista-rabota-zadachi-zarplata-karera-i-istorii-korrespondentov/"
                     color="yellow"
                     highlight={false}
                 >
                     <Text size="m" weight="semi">
-                        Все партнёры
-                        Московского Политеха
+                        Гайд по профессии журналиста
                     </Text>
                     <Text>
                         Пара слов о трудоустройстве студентов
@@ -65,13 +65,12 @@ export const Links: FC<LinksProps> = ({
                     </Text>
                 </CardLink>
                 <CardLink
-                    to={Routes.MAIN}
+                    to="https://vplate.ru/professii/korrespondent/"
                     color="yellow"
                     highlight={false}
                 >
                     <Text size="m" weight="semi">
-                        Все партнёры
-                        Московского Политеха
+                        Какие бывают репортеры?
                     </Text>
                     <Text>
                         Пара слов о трудоустройстве студентов

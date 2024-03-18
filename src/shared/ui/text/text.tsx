@@ -19,6 +19,7 @@ export const Text: FC<TextProps> = ({
     to,
     className,
     children,
+    zIndex,
     ...props
 }) => (
     <ConditionalWrapper
@@ -38,7 +39,11 @@ export const Text: FC<TextProps> = ({
                 styles[color],
                 styles[view],
                 styles[breakWords ? 'breakWords' : ''],
+                {
+                    [styles.relative]: zIndex,
+                },
             )}
+            style={{ zIndex }}
             {...props}
         >
             {caps ? children.toString().toUpperCase() : children}

@@ -5,4 +5,5 @@ export type CardProps = ComponentProps<'div'> & {
   text?: string;
   image?: string;
   height?: number;
+  width?: number;
 };

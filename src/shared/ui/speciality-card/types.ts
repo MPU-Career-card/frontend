@@ -12,4 +12,5 @@ export type SpecialityCardProps = {
   budgetPlacesCount: SpecialityProperty;
   period: number;
   isResponsiveHeight?: boolean;
+  className?: string;
 }

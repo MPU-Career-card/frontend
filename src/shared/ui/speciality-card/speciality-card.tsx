@@ -20,6 +20,7 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
     passingScore,
     period,
     price,
+    className,
     isResponsiveHeight = false,
 }) => {
     const priceValue = useMemo(
@@ -37,7 +38,12 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
     const passingScoreLabel = `(${passingScore.year})`;
 
     return (
-        <CardLink to={to} color="white" isResponsiveHeight={isResponsiveHeight}>
+        <CardLink
+            to={to}
+            color="white"
+            isResponsiveHeight={isResponsiveHeight}
+            className={className}
+        >
             <Flex
                 className={styles.header}
                 direction="vertical"

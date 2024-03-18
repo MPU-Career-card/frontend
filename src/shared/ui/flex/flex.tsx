@@ -16,6 +16,7 @@ export const Flex: FC<FlexProps> = ({
     gap,
     children,
     className,
+    ...props
 }) => (
     <div
         className={cn(
@@ -29,6 +30,7 @@ export const Flex: FC<FlexProps> = ({
             },
         )}
         style={{ gap, marginTop, marginBottom }}
+        {...props}
     >
         {children}
     </div>

@@ -8,9 +8,10 @@ export const Vacancies = () => {
     useEffect(() => {
         const script = document.createElement('script');
 
-        script.src = 'https://api.hh.ru/widgets/vacancies/search'
-          + '?count=6&locale=RU&links_color=596daf&border_color=ffffff'
-          + '&text=react&area=1&experience=noExperience';
+        script.src = 'https://api.hh.ru/widgets/vacancies/search?count=6'
+          + '&locale=RU&links_color=596daf&border_color=ffffff'
+          + '&text=%D0%9A%D0%BE%D1%80%D1%80%D0%B5%D1%81%D0%'
+          + 'BF%D0%BE%D0%BD%D0%B4%D0%B5%D0%BD%D1%82&area=1';
         script.className = 'hh-script';
         script.async = true;
 

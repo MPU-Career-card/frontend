@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 import {
     Flex, Text, Card, Tabs, Tab, SpecialityCard,
 } from 'shared/ui';
@@ -5,8 +7,8 @@ import {
 import React, { FC, useState } from 'react';
 import { cn, useWindowDimensions } from 'shared/lib';
 
-import { Routes } from 'shared/config';
 import { SpecialtiesProps } from './types';
+
 import styles from './specialties.module.scss';
 
 export const Specialties: FC<SpecialtiesProps> = ({
@@ -52,99 +54,35 @@ export const Specialties: FC<SpecialtiesProps> = ({
             </div>
             {tab === '1' && (
                 <Flex
-                    gap={24}
+                    align="stretch"
+                    gap={8}
                     direction={
-                        ['m', 'l'].includes(sizeCategory)
-                            ? 'horizontal' : 'vertical'
+                        ['xs', 's', 'm', 'l'].includes(sizeCategory)
+                            ? 'vertical' : 'horizontal'
                     }
                 >
-                    <Flex
-                        gap={22}
-                        direction={
-                            ['xs', 's', 'm', 'l'].includes(sizeCategory)
-                                ? 'vertical' : 'horizontal'
-                        }
-                    >
-                        <SpecialityCard
-                            to={Routes.MAIN}
-                            faculty="Факультет экономики и управления"
-                            name="Управление бизнес-процессами (Менеджмент)"
-                            budgetPlacesCount={{ value: 7, year: 2023 }}
-                            passingScore={{ value: 298, year: 2022 }}
-                            price={{ value: 268230, year: 2023 }}
-                            period={4}
-                        />
-                        <SpecialityCard
-                            to={Routes.MAIN}
-                            faculty="Факультет экономики и управления"
-                            name="Управление бизнес-процессами (Менеджмент)"
-                            budgetPlacesCount={{ value: 7, year: 2023 }}
-                            passingScore={{ value: 298, year: 2022 }}
-                            price={{ value: 268230, year: 2023 }}
-                            period={4}
-                        />
-                        <SpecialityCard
-                            to={Routes.MAIN}
-                            faculty="Факультет экономики и управления"
-                            name="Управление бизнес-процессами (Менеджмент)"
-                            budgetPlacesCount={{ value: 7, year: 2023 }}
-                            passingScore={{ value: 298, year: 2022 }}
-                            price={{ value: 268230, year: 2023 }}
-                            period={4}
-                        />
-                    </Flex>
-                    <Flex
-                        gap={22}
-                        direction={
-                            ['xs', 's', 'm', 'l'].includes(sizeCategory)
-                                ? 'vertical' : 'horizontal'
-                        }
-                    >
-                        <SpecialityCard
-                            to={Routes.MAIN}
-                            faculty="Факультет экономики и управления"
-                            name="Управление бизнес-процессами (Менеджмент)"
-                            budgetPlacesCount={{ value: 7, year: 2023 }}
-                            passingScore={{ value: 298, year: 2022 }}
-                            price={{ value: 268230, year: 2023 }}
-                            period={4}
-                        />
-                        <SpecialityCard
-                            to={Routes.MAIN}
-                            faculty="Факультет экономики и управления"
-                            name="Управление бизнес-процессами (Менеджмент)"
-                            budgetPlacesCount={{ value: 7, year: 2023 }}
-                            passingScore={{ value: 298, year: 2022 }}
-                            price={{ value: 268230, year: 2023 }}
-                            period={4}
-                        />
-                        <SpecialityCard
-                            to={Routes.MAIN}
-                            faculty="Факультет экономики и управления"
-                            name="Управление бизнес-процессами (Менеджмент)"
-                            budgetPlacesCount={{ value: 7, year: 2023 }}
-                            passingScore={{ value: 298, year: 2022 }}
-                            price={{ value: 268230, year: 2023 }}
-                            period={4}
-                        />
-                    </Flex>
-                </Flex>
-            )}
-            {tab === '2' && (
-                <Flex gap={24}>
-                    <Card
-                        title="Распределение задач между членами команды"
-                        text="Коммуникация"
-                        image="a"
+                    <SpecialityCard
+                        className={styles.card}
+                        to="https://mospolytech.ru/postupayushchim/programmy-obucheniya/periodicheskie-izdaniya-i-multimediynaya-zhurnalistika/&sa=D&source=docs&ust=1710754776266808&usg=AOvVaw3OxnC2z3DLztynOP8KsAtp"
+                        faculty="Институт издательского дела и журналистики"
+                        name="Периодические издания и мультимедийная журналистика (Журналистика)"
+                        budgetPlacesCount={{ value: 35, year: 2024 }}
+                        passingScore={{ value: 295, year: 2023 }}
+                        price={{ value: 268200, year: 2023 }}
+                        period={4}
                     />
-                    <Card
-                        title="Распределение задач между членами команды"
-                        text="Коммуникация "
-                        image="a"
+                    <SpecialityCard
+                        className={styles.card}
+                        to="https://mospolytech.ru/postupayushchim/programmy-obucheniya/delovaya-zhurnalistika/&sa=D&source=docs&ust=1710754776267148&usg=AOvVaw3w-d-7V5ek1zY10C-XrV9v"
+                        faculty="Институт издательского дела и журналистики"
+                        name="Деловая журналистика (Журналистика)"
+                        budgetPlacesCount={{ value: 35, year: 2024 }}
+                        passingScore={{ value: 295, year: 2023 }}
+                        price={{ value: 268200, year: 2023 }}
+                        period={4}
                     />
                 </Flex>
             )}
-
         </div>
     );
 };
