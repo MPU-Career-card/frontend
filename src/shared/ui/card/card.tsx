@@ -23,7 +23,7 @@ export const Card: FC<CardProps> = ({
                 {title && (
                     <Text
                         color="dark-gray"
-                        size="s"
+                        size="l"
                         weight="semi"
                     >
                         {title}
@@ -33,7 +33,7 @@ export const Card: FC<CardProps> = ({
             </Flex>
         )}
         {text && (
-            <Text color="black" size="xs" weight="regular">
+            <Text color="black" size="s" weight="regular">
                 {text}
             </Text>
         )}

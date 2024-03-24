@@ -33,7 +33,7 @@ export const Specialties: FC<SpecialtiesProps> = ({
                         rounded={['xs', 's', 'm'].includes(sizeCategory)}
                         value="1"
                     >
-                        <Text size="m" color={tab === '1' ? 'white' : 'black'}>
+                        <Text size="l" weight="medium" color={tab === '1' ? 'white' : 'grey'}>
                             Бакалавриат и специалитет
                         </Text>
                     </Tab>
@@ -41,12 +41,12 @@ export const Specialties: FC<SpecialtiesProps> = ({
                         value="2"
                         roundedSide={['xs', 's', 'm'].includes(sizeCategory) ? 'left' : ''}
                     >
-                        <Text size="m" color={tab === '2' ? 'white' : 'black'}>
+                        <Text size="l" weight="medium" color={tab === '2' ? 'white' : 'grey'}>
                             Магистратура
                         </Text>
                     </Tab>
                     <Tab roundedSide="right" value="3">
-                        <Text size="m" color={tab === '3' ? 'white' : 'black'}>
+                        <Text size="l" weight="medium" color={tab === '3' ? 'white' : 'grey'}>
                             ДПО
                         </Text>
                     </Tab>
@@ -64,7 +64,7 @@ export const Specialties: FC<SpecialtiesProps> = ({
                     <SpecialityCard
                         className={styles.card}
                         to="https://mospolytech.ru/postupayushchim/programmy-obucheniya/periodicheskie-izdaniya-i-multimediynaya-zhurnalistika/&sa=D&source=docs&ust=1710754776266808&usg=AOvVaw3OxnC2z3DLztynOP8KsAtp"
-                        faculty="Институт издательского дела и журналистики"
+                        faculty="институт издательского дела и журналистики"
                         name="Периодические издания и мультимедийная журналистика (Журналистика)"
                         budgetPlacesCount={{ value: 35, year: 2024 }}
                         passingScore={{ value: 295, year: 2023 }}
@@ -74,7 +74,7 @@ export const Specialties: FC<SpecialtiesProps> = ({
                     <SpecialityCard
                         className={styles.card}
                         to="https://mospolytech.ru/postupayushchim/programmy-obucheniya/delovaya-zhurnalistika/&sa=D&source=docs&ust=1710754776267148&usg=AOvVaw3w-d-7V5ek1zY10C-XrV9v"
-                        faculty="Институт издательского дела и журналистики"
+                        faculty="институт издательского дела и журналистики"
                         name="Деловая журналистика (Журналистика)"
                         budgetPlacesCount={{ value: 35, year: 2024 }}
                         passingScore={{ value: 295, year: 2023 }}

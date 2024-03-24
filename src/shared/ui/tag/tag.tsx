@@ -12,15 +12,17 @@ export const Tag: FC<TagProps> = ({
     color = 'white',
     textColor = 'black',
     size = 'm',
+    sizePadding = 'm',
     weight = 'regular',
     view = 'gilroy',
+    center = 'center',
     caps,
     ...props
 }) => (
     <div
         className={cn(
             color,
-            styles[size],
+            styles[sizePadding],
             styles.tag,
         )}
         {...props}
@@ -31,6 +33,7 @@ export const Tag: FC<TagProps> = ({
             view={view}
             weight={weight}
             caps={caps}
+            center={center}
         >
             {children}
         </Text>

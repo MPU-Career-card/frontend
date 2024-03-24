@@ -1,7 +1,7 @@
 import { Page } from 'pages';
 
 import {
-    SpecialtiesAccordions, Links, Footer, Promo,
+    SpecialtiesAccordions, Links, Feedback, Promo,
 } from 'widgets';
 
 import { Container } from 'shared/ui';
@@ -21,7 +21,7 @@ const SpecialtiesPage = () => (
             />
             <SpecialtiesAccordions marginTop={100} marginBottom={100} />
             <Links marginTop={100} marginBottom={64} />
-            <Footer />
+            <Feedback />
         </Container>
     </Page>
 );

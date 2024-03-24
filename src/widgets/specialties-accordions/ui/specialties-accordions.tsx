@@ -46,7 +46,8 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
                     >
                         <Text
                             size="m"
-                            color={tab === tabData.id ? 'white' : 'black'}
+                            weight="medium"
+                            color={tab === tabData.id ? 'white' : 'grey'}
                         >
                             {tabData.label}
                         </Text>
@@ -82,7 +83,7 @@ export const SpecialtiesAccordions: FC<SpecialtiesAccordionsProps> = ({
                                         ) => (
                                             <Tag
                                                 key={tag || tagIndex}
-                                                weight={tagIndex === 0 ? 'semi' : 'medium'}
+                                                weight={tagIndex === 0 ? 'medium' : 'medium'}
                                                 color={tagIndex === 0 ? 'orange' : undefined}
                                                 textColor={tagIndex === 0 ? 'white' : undefined}
                                             >
