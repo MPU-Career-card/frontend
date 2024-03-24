@@ -57,14 +57,14 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
                 <Flex direction="vertical" align="start" gap={32}>
                     <Flex direction="vertical" align="start" gap={4}>
                         <Flex gap={6} align="baseline">
-                            <Text size="l" weight="semi">{priceValue}</Text>
+                            <Text size="xl" weight="semi">{priceValue}</Text>
                             <Text size="s" weight="semi">{priceLabel}</Text>
                         </Flex>
                         <Text size="s">Стоимость, ₽</Text>
                     </Flex>
                     <Flex direction="vertical" align="start" gap={4}>
                         <Flex gap={6} align="baseline">
-                            <Text size="l" weight="semi">
+                            <Text size="xl" weight="semi">
                                 {budgetPlacesCount.value}
                             </Text>
                             <Text size="s" weight="semi">
@@ -77,7 +77,7 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
                 <Flex direction="vertical" align="start" gap={32}>
                     <Flex direction="vertical" align="start" gap={4}>
                         <Flex gap={6} align="baseline">
-                            <Text size="l" weight="semi">
+                            <Text size="xl" weight="semi">
                                 {passingScore.value}
                             </Text>
                             <Text size="s" weight="semi">
@@ -88,7 +88,7 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
                     </Flex>
                     <Flex direction="vertical" align="start" gap={4}>
                         <Flex gap={6} align="baseline">
-                            <Text size="l" weight="semi">{period}</Text>
+                            <Text size="xl" weight="semi">{period}</Text>
                             <Text size="s" weight="semi">{periodLabel}</Text>
                         </Flex>
                         <Text size="s">Срок обучения</Text>

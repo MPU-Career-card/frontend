@@ -10,6 +10,7 @@ export type TextProps = Omit<ComponentProps<TagType>, 'children'> & {
   | 'greyTransparent' | 'blue';
   size?: 'xs2' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xl2' | 'xl3';
   weight?: 'regular' | 'medium' | 'semi' | 'bold';
+  center?: 'start' | 'center' | 'end';
   caps?: boolean;
   to?: string;
   breakWords?: boolean;

@@ -14,6 +14,7 @@ export const Text: FC<TextProps> = ({
     size = 's',
     view = 'gilroy',
     weight = 'regular',
+    center = 'start',
     caps = false,
     breakWords = false,
     to,
@@ -37,6 +38,7 @@ export const Text: FC<TextProps> = ({
                 styles[size],
                 styles[weight],
                 styles[color],
+                styles[center],
                 styles[view],
                 styles[breakWords ? 'breakWords' : ''],
                 {
