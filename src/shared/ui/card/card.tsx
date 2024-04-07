@@ -19,7 +19,7 @@ export const Card: FC<CardProps> = ({
         style={{ minHeight: height, minWidth: width }}
     >
         {(title || image) && (
-            <Flex gap={8}>
+            <Flex justify="space-between">
                 {title && (
                     <Text
                         color="dark-gray"

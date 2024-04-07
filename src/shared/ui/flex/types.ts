@@ -7,7 +7,7 @@ export type FlexProps = ComponentProps<'div'> & {
       'center' | 'start' | 'end' |
       'space-between' | 'space-around' | 'space-evenly';
   nowrap?: boolean;
-  gap?: number;
+  gap?: number | `${number}%`;
   marginTop?: number;
   marginBottom?: number;
 };

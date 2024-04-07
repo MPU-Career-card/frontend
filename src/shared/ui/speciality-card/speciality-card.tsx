@@ -6,7 +6,7 @@ import {
     Tag,
     Text,
 } from 'shared/ui';
-import { getDeclensions, NBSP } from 'shared/lib';
+import { getDeclensions, NBSP, useWindowDimensions } from 'shared/lib';
 
 import { SpecialityCardProps } from './types';
 
@@ -23,6 +23,8 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
     className,
     isResponsiveHeight = false,
 }) => {
+    const size = useWindowDimensions();
+
     const priceValue = useMemo(
         () => (price.value / 1000).toFixed(1),
         [price.value],
@@ -53,7 +55,7 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
                 <Tag color="gray" size="s">{faculty}</Tag>
                 <Text size="l" weight="semi">{name}</Text>
             </Flex>
-            <Flex gap={70}>
+            <Flex gap="10%">
                 <Flex direction="vertical" align="start" gap={32}>
                     <Flex direction="vertical" align="start" gap={4}>
                         <Flex gap={6} align="baseline">
@@ -91,7 +93,7 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
                             <Text size="l" weight="semi">{period}</Text>
                             <Text size="s" weight="semi">{periodLabel}</Text>
                         </Flex>
-                        <Text size="s">Срок обучения</Text>
+                        <Text size="s" breakWords={size === 'xs'}>Срок обучения</Text>
                     </Flex>
                 </Flex>
             </Flex>

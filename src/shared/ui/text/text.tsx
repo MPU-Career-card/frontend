@@ -16,6 +16,7 @@ export const Text: FC<TextProps> = ({
     weight = 'regular',
     caps = false,
     breakWords = false,
+    isResponsive = false,
     to,
     className,
     children,
@@ -41,6 +42,7 @@ export const Text: FC<TextProps> = ({
                 styles[breakWords ? 'breakWords' : ''],
                 {
                     [styles.relative]: zIndex,
+                    [styles['is-responsive']]: isResponsive,
                 },
             )}
             style={{ zIndex }}

@@ -38,52 +38,32 @@ export const Partners: FC<PartnersProps> = ({
                         ? 'vertical' : 'horizontal'
                 }
             >
-                <Flex
-                    align="stretch"
-                    gap={24}
-                    direction={['s'].includes(sizeCategory) ? 'horizontal' : 'vertical'}
-                >
-                    <Flex
-                        align="stretch"
-                        gap={24}
-                        direction={
-                            ['xs', 's'].includes(sizeCategory) ? 'vertical' : 'horizontal'
-                        }
-                    >
-                        <PartnerCard
-                            to="https://www.mosobl.kp.ru/"
-                            image={`${process.env.PUBLIC_URL}/assets/kp.jpg`}
-                        />
-                        <PartnerCard
-                            to="https://mdk-arbat.ru/"
-                            image={`${process.env.PUBLIC_URL}/assets/mdk.png`}
-                        />
-                        <PartnerCard
-                            to="http://ripol.ru/"
-                            image={`${process.env.PUBLIC_URL}/assets/ripol.svg`}
-                        />
-                    </Flex>
-                    <Flex
-                        align="stretch"
-                        gap={24}
-                        direction={
-                            ['xs', 's'].includes(sizeCategory) ? 'vertical' : 'horizontal'
-                        }
-                    >
-                        <PartnerCard
-                            to="https://rg.ru/"
-                            image={`${process.env.PUBLIC_URL}/assets/rg.png`}
-                        />
-                        <PartnerCard
-                            to="https://vm.ru/"
-                            image={`${process.env.PUBLIC_URL}/assets/vm.svg`}
-                        />
-                        <PartnerCard
-                            to="https://www.biblio-globus.ru/"
-                            image={`${process.env.PUBLIC_URL}/assets/globus.png`}
-                        />
-                    </Flex>
-                </Flex>
+                <div className={styles.cards}>
+                    <PartnerCard
+                        to="https://www.mosobl.kp.ru/"
+                        image={`${process.env.PUBLIC_URL}/assets/kp.jpg`}
+                    />
+                    <PartnerCard
+                        to="https://mdk-arbat.ru/"
+                        image={`${process.env.PUBLIC_URL}/assets/mdk.png`}
+                    />
+                    <PartnerCard
+                        to="http://ripol.ru/"
+                        image={`${process.env.PUBLIC_URL}/assets/ripol.svg`}
+                    />
+                    <PartnerCard
+                        to="https://rg.ru/"
+                        image={`${process.env.PUBLIC_URL}/assets/rg.png`}
+                    />
+                    <PartnerCard
+                        to="https://vm.ru/"
+                        image={`${process.env.PUBLIC_URL}/assets/vm.svg`}
+                    />
+                    <PartnerCard
+                        to="https://www.biblio-globus.ru/"
+                        image={`${process.env.PUBLIC_URL}/assets/globus.png`}
+                    />
+                </div>
                 <ProCard
                     to={Routes.MAIN}
                     color="blue"

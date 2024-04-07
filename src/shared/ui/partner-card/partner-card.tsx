@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { FC } from 'react';
 
-import { Flex } from 'shared/ui';
-
 import { PartnerCardProps } from './types';
 
 import styles from './partner-card.module.scss';

@@ -2,8 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { Size, SizeSchema } from './types';
 
-function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
+interface WindowDimension {
+  width: number;
+  height: number;
+}
+
+function getWindowDimensions(): WindowDimension {
+    const { width, height } = window.screen;
 
     return {
         width,
@@ -19,8 +24,8 @@ const defaultSizeSchema: SizeSchema = {
     xl: 1400,
 };
 
-export function useWindowDimensions(schema?: SizeSchema) {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+export function useWindowDimensions(schema?: SizeSchema): Size {
+    const [windowDimensions, setWindowDimensions] = useState<WindowDimension>(getWindowDimensions);
 
     const sizeSchema: SizeSchema = {
         ...defaultSizeSchema,
@@ -38,9 +43,8 @@ export function useWindowDimensions(schema?: SizeSchema) {
     }, []);
 
     for (const key in sizeSchema) {
-        // @ts-ignore
-        if (windowDimensions.width < sizeSchema[key]) {
-            return key;
+        if (windowDimensions.width < sizeSchema[key as Size]!) {
+            return key as Size;
         }
     }
 
