@@ -8,11 +8,11 @@ export const CareerPointer: SVG = ({ fill, ...props }) => (
         height="100"
         viewBox="0 0 100 100"
         fill="none"
+        {...props}
     >
         <g clipPath="url(#clip0_157_1027)">
             <mask
                 id="mask0_157_1027"
-                // style={{ 'mask-type': 'luminance' }}
                 maskUnits="userSpaceOnUse"
                 x="0"
                 y="0"

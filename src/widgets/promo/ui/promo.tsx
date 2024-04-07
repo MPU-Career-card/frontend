@@ -9,7 +9,7 @@ import { PromoProps } from './types';
 import styles from './promo.module.scss';
 
 export const Promo: FC<PromoProps> = ({ image, title, description }) => {
-    const size = useWindowDimensions({ xs: 495 });
+    const size = useWindowDimensions({ xs: 524 });
 
     const style: CSSProperties = {
         backgroundImage: `url(${image})`,

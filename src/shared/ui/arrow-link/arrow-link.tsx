@@ -24,7 +24,7 @@ export const ArrowLink: FC<ArrowLinkProps> = ({
     };
 
     return (
-        <Link to={to}>
+        <Link to={to} target="_blank">
             <div
                 style={{ width, height: width }}
                 className={cn(

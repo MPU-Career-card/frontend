@@ -1,13 +1,14 @@
 /* eslint-disable max-len */
 
+import React, { FC } from 'react';
+
 import {
     Flex, Text, CardLink,
 } from 'shared/ui';
+import { useWindowDimensions } from 'shared/lib';
 
-import { cn, useWindowDimensions } from 'shared/lib';
-import React, { FC } from 'react';
-import { Routes } from 'shared/config';
 import { LinksProps } from './types';
+
 import styles from './links.module.scss';
 
 export const Links: FC<LinksProps> = ({
@@ -18,7 +19,7 @@ export const Links: FC<LinksProps> = ({
 
     return (
         <Flex
-            className={cn(styles.links)}
+            className={styles.links}
             gap={['xs', 's', 'm', 'l'].includes(sizeCategory) ? 0 : 32}
             align="start"
             direction={

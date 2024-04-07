@@ -52,6 +52,10 @@
     line-height: var(--font-line-3xl);
 }
 
+//.is-responsive {
+//  font-size: calc(1em + 16 * ((100vw - 568px) / (768 - 568)));
+//}
+
 .regular {
     font-weight: 400;
 }

@@ -15,7 +15,7 @@ export const Map: FC<MapProps> = ({
     pointers,
 }) => {
     const [selectedPointerIndex, setSelectedPointerIndex] = useState<number>(0);
-    const sizeCategory = useWindowDimensions();
+    const size = useWindowDimensions();
 
     const colorMap = ['#0039F7', '#C766FF', '#80C528', '#EB6ECF', '#DD8E46', '#3ABBC4'];
     const classNameMap = ['firstPointer', 'secondPointer', 'thirdPointer', 'forthPointer', 'fifthPointer'];
@@ -33,16 +33,16 @@ export const Map: FC<MapProps> = ({
                 Карьерный путь
             </Text>
             <Flex
-                marginTop={['xs', 's', 'm'].includes(sizeCategory) ? 50 : 20}
+                marginTop={['xs', 's', 'm'].includes(size) ? 50 : 20}
                 direction={
-                    ['xs', 's', 'm'].includes(sizeCategory)
+                    ['xs', 's', 'm'].includes(size)
                         ? 'vertical' : 'horizontal'
                 }
-                gap={['xs', 's', 'm'].includes(sizeCategory) ? 50 : 130}
+                gap={['xs', 's', 'm'].includes(size) ? 50 : 130}
             >
                 <div className={cn(
                     styles.mapContainer,
-                    styles[sizeCategory],
+                    styles[size],
                 )}
                 >
                     {pointers.map(({ title }, index) => (
@@ -52,7 +52,12 @@ export const Map: FC<MapProps> = ({
                             className={cn(styles.pointer, styles[index === pointers.length - 1 ? 'lastPointer' : classNameMap[index]])}
                             key={title}
                         >
-                            <CareerPointer fill={colorMap[index]} />
+                            <CareerPointer
+                                className={cn({
+                                    [styles.opacity]: selectedPointerIndex !== index,
+                                })}
+                                fill={colorMap[index]}
+                            />
                             <Text size="l" color={selectedPointerIndex === index ? 'white' : 'greyTransparent'} breakWords>
                                 {title}
                             </Text>

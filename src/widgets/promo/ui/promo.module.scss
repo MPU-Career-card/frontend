@@ -115,9 +115,13 @@
   }
 }
 
-@media (max-width: 495px) {
+@media (max-width: 524px) {
   .title {
     width: 180px;
+
+    &::after {
+      display: none;
+    }
   }
 
   .decorative {
