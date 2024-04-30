@@ -1,13 +1,13 @@
 import { ComponentProps } from 'react';
 
-type Link = {
-  to: string;
+type Skill = {
   title: string;
   description: string;
+  image: string;
 }
 
-export type LinksProps = ComponentProps<'div'> & {
+export type SkillsProps = ComponentProps<'div'> & {
     marginTop?: number;
     marginBottom?: number;
-    links: Link[];
+    skills: Skill[];
 };

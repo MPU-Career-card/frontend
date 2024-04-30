@@ -1,7 +1,7 @@
 export { Header } from './header';
 export { Map } from './map';
-export { Scroll } from './scroll';
-export { Cards } from './cards';
+export { Tasks } from './tasks';
+export { Skills } from './skills';
 export { Specialties } from './specialties';
 export { SpecialtiesAccordions } from './specialties-accordions';
 export { Partners } from './partners';

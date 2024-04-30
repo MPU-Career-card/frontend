@@ -14,6 +14,7 @@ import styles from './links.module.scss';
 export const Links: FC<LinksProps> = ({
     marginTop,
     marginBottom,
+    links,
 }) => {
     const sizeCategory = useWindowDimensions();
 
@@ -39,45 +40,20 @@ export const Links: FC<LinksProps> = ({
                         ? 'vertical' : 'horizontal'
                 }
             >
-                <CardLink
-                    to="https://profitworks.com.ua/ru/professii-ru/sredstva-massovoj-informatsii/korrespondent&sa=D&source=docs&ust=1710754776268138&usg=AOvVaw2u5jdSeO-oLB5iHJmV6i0M"
-                    color="yellow"
-                    highlight={false}
-                >
-                    <Text size="m" weight="semi">
-                        Все о профессии корреспондента
-                    </Text>
-                    <Text>
-                        Пара слов о трудоустройстве студентов
-                        Московского Политеха
-                    </Text>
-                </CardLink>
-                <CardLink
-                    to="https://news.pressfeed.ru/bolshoj-gajd-po-professii-zhurnalista-rabota-zadachi-zarplata-karera-i-istorii-korrespondentov/"
-                    color="yellow"
-                    highlight={false}
-                >
-                    <Text size="m" weight="semi">
-                        Гайд по профессии журналиста
-                    </Text>
-                    <Text>
-                        Пара слов о трудоустройстве студентов
-                        Московского Политеха
-                    </Text>
-                </CardLink>
-                <CardLink
-                    to="https://vplate.ru/professii/korrespondent/"
-                    color="yellow"
-                    highlight={false}
-                >
-                    <Text size="m" weight="semi">
-                        Какие бывают репортеры?
-                    </Text>
-                    <Text>
-                        Пара слов о трудоустройстве студентов
-                        Московского Политеха
-                    </Text>
-                </CardLink>
+                {links.map(({ to, title, description }) => (
+                    <CardLink
+                        to={to}
+                        color="yellow"
+                        highlight={false}
+                    >
+                        <Text size="m" weight="semi">
+                            {title}
+                        </Text>
+                        <Text>
+                            {description}
+                        </Text>
+                    </CardLink>
+                ))}
             </Flex>
         </Flex>
     );

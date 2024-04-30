@@ -2,7 +2,7 @@
 import { Flex, Text } from 'shared/ui';
 
 import React, { FC, useState } from 'react';
-import { cn, getPrice, useWindowDimensions } from 'shared/lib';
+import { cn, useWindowDimensions } from 'shared/lib';
 import { CareerPointer } from 'shared/icons/careerPointer';
 
 import { MapProps } from './types';
@@ -78,10 +78,7 @@ export const Map: FC<MapProps> = ({
                             {pointers[selectedPointerIndex].title}
                         </Text>
                         <Text size="l" color="pink">
-                            {getPrice(
-                                pointers[selectedPointerIndex].minSalary,
-                                pointers[selectedPointerIndex].maxSalary,
-                            )}
+                            {pointers[selectedPointerIndex].salary}
                         </Text>
                     </div>
                     <Text color="white">

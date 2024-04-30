@@ -22,7 +22,7 @@ export const Promo: FC<PromoProps> = ({ image, title, description }) => {
             </div>
             <div className={styles.title}>
                 <Text
-                    size={size === 'xs' ? 'xl' : 'xl3'}
+                    style={{ fontSize: size === 'xs' ? '24px' : '52px', lineHeight: 1 }}
                     weight="medium"
                     zIndex={2}
                 >
