@@ -1,6 +1,5 @@
-import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import { App } from './app';
 
@@ -13,7 +12,7 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-    <BrowserRouter basename="/frontend">
+    <HashRouter>
         <App />
-    </BrowserRouter>,
+    </HashRouter>,
 );
