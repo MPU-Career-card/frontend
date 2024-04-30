@@ -1,12 +1,11 @@
 /* eslint-disable max-len */
 
-import {
-    Flex, Text, Tabs, Tab, SpecialityCard,
-} from 'shared/ui';
-
 import React, { FC, useState } from 'react';
+
+import { Text, Tabs, Tab } from 'shared/ui';
 import { cn, useWindowDimensions } from 'shared/lib';
 
+import { SpecialityContent } from './speciality-content';
 import { SpecialtiesProps } from './types';
 
 import styles from './specialties.module.scss';
@@ -14,8 +13,11 @@ import styles from './specialties.module.scss';
 export const Specialties: FC<SpecialtiesProps> = ({
     marginTop,
     marginBottom,
+    bachelors,
+    masters,
+    dpo,
 }) => {
-    const [tab, setTab] = useState('1');
+    const [tab, setTab] = useState<string>('1');
     const sizeCategory = useWindowDimensions();
 
     return (
@@ -52,49 +54,12 @@ export const Specialties: FC<SpecialtiesProps> = ({
                     </Tab>
                 </Tabs>
             </div>
-            {tab === '1' && (
-                <Flex
-                    align="stretch"
-                    gap={8}
-                    direction={
-                        ['xs', 's', 'm', 'l'].includes(sizeCategory)
-                            ? 'vertical' : 'horizontal'
-                    }
-                >
-                    <SpecialityCard
-                        className={styles.card}
-                        to="https://mospolytech.ru/postupayushchim/programmy-obucheniya/periodicheskie-izdaniya-i-multimediynaya-zhurnalistika/"
-                        faculty="Институт издательского дела и журналистики"
-                        name="Периодические издания и мультимедийная журналистика (Журналистика)"
-                        budgetPlacesCount={{ value: 35, year: 2024 }}
-                        passingScore={{ value: 295, year: 2023 }}
-                        price={{ value: 268200, year: 2023 }}
-                        period={4}
-                    />
-                    <SpecialityCard
-                        className={styles.card}
-                        to="https://mospolytech.ru/postupayushchim/programmy-obucheniya/delovaya-zhurnalistika/"
-                        faculty="Институт издательского дела и журналистики"
-                        name="Деловая журналистика (Журналистика)"
-                        budgetPlacesCount={{ value: 35, year: 2024 }}
-                        passingScore={{ value: 295, year: 2023 }}
-                        price={{ value: 268200, year: 2023 }}
-                        period={4}
-                    />
-                </Flex>
-            )}
-            {tab === '2' && (
-                <Flex direction="vertical" gap={12}>
-                    <Text size="xl2">Нет программ</Text>
-                    <Text size="xl3">😔</Text>
-                </Flex>
-            )}
-            {tab === '3' && (
-                <Flex direction="vertical" gap={12}>
-                    <Text size="xl2">Нет программ</Text>
-                    <Text size="xl3">😔</Text>
-                </Flex>
-            )}
+            <SpecialityContent
+                tab={tab}
+                bachelors={bachelors}
+                masters={masters}
+                dpo={dpo}
+            />
         </div>
     );
 };

@@ -1,3 +1,5 @@
+import styles from './spinner.module.scss';
+
 export const Spinner = () => (
-    <div>Loading...</div>
+    <div className={styles.spinner} />
 );

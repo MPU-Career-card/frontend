@@ -43,5 +43,6 @@ module.exports = {
         'no-shadow': 'off',
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'no-restricted-syntax': 'off',
+        camelcase: 'off',
     },
 };

@@ -3,8 +3,7 @@ import { ComponentProps } from 'react';
 type Pointer = {
   title: string;
   description: string;
-  minSalary: number;
-  maxSalary?: number;
+  salary: string;
 }
 
 export type MapProps = ComponentProps<'div'> & {

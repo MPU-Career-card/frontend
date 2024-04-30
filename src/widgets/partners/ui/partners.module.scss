@@ -1,10 +1,23 @@
-.partnersContent {
-    width: 100%;
+.grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 16px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(max(150px, 30%), 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
+}
+
+.title {
+  margin-bottom: 32px;
+}
+
+@media (max-width: 840px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
 }

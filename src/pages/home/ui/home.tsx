@@ -1,9 +1,11 @@
 /* eslint-disable max-len */
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import {
-    Scroll,
+    Tasks,
     Map,
-    Cards,
+    Skills,
     Specialties,
     Partners,
     Links,
@@ -12,56 +14,99 @@ import {
     Feedback,
 } from 'widgets';
 import { Container } from 'shared/ui';
+import { Profession, ProfessionParams } from 'shared/types';
+import { professionAdapter, professionsApi } from 'shared/lib';
 
-const HomePage = () => (
-    <Container>
-        <Promo
-            image="https://almamater13.ru/800/600/http/okobzor.ru/wp-content/uploads/2021/06/54.jpg"
-            title="Корреспондент"
-            description="
-              Корреспондент – это специалист, который занимается подготовкой
-              информационных материалов для средств массовой информации
-              (преимущественно телевизионных).
-            "
-        />
-        <Scroll marginTop={100} marginBottom={100} />
-        <Map
-            marginTop={100}
-            marginBottom={100}
-            pointers={[
-                {
-                    title: 'Младший корреспондент',
-                    description: 'Мониторинг информационных ресурсов, '
-                      + 'блогосферы, поиск актуальных тем для репортажей и статей',
-                    minSalary: 30000,
-                    maxSalary: 50000,
-                },
-                {
-                    title: 'Корреспондент',
-                    description: 'Освещение профильных мероприятий, передача свежей, достоверной информации широкой аудитории',
-                    minSalary: 50000,
-                    maxSalary: 90000,
-                },
-                {
-                    title: 'Тележурналист',
-                    description: 'Выезд на место и сбор информации, установление контактов с авторитетными источниками, взаимодействие со съемочной группой, подача материала в рамках телевизионного формата',
-                    minSalary: 100000,
-                    maxSalary: 120000,
-                },
-                {
-                    title: 'Выпускающий редактор',
-                    description: 'Разработка концепции каждого выпуска газеты или журнала, составление макета, постановка задач корреспондентам, проверка готовых материалов, внесение корректировок, координация верстки.',
-                    minSalary: 150000,
-                },
-            ]}
-        />
-        <Cards marginTop={100} marginBottom={100} />
-        <Specialties marginTop={100} marginBottom={100} />
-        <Vacancies />
-        <Partners marginTop={100} marginBottom={100} />
-        <Links marginTop={100} marginBottom={100} />
-        <Feedback />
-    </Container>
-);
+import { AxiosError } from 'axios';
+import { Error } from '../../error';
+import { Loading } from '../../loading';
+
+const HomePage = () => {
+    const [profession, setProfession] = useState<Profession>();
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [errorStatus, setErrorStatus] = useState<number>();
+    const [errorText, setErrorText] = useState<string>();
+    const { professionTitle } = useParams<ProfessionParams>();
+
+    const getProfession = async () => {
+        try {
+            setIsLoading(true);
+
+            const { data } = await professionsApi.get<Profession>(`/${professionTitle}`);
+
+            setProfession(data);
+        } catch (err) {
+            if (err instanceof AxiosError) {
+                const { status, data: { detail } } = err.response || { data: {} };
+
+                setErrorStatus(status);
+                setErrorText(detail);
+            }
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        getProfession();
+    }, []);
+
+    if (isLoading) {
+        return <Loading />;
+    }
+
+    if (!profession) {
+        return (
+            <Error
+                status={errorStatus}
+                description={errorText}
+            />
+        );
+    }
+
+    return (
+        <Container>
+            <Promo
+                image="https://www.gofraprime.ru/wp-content/uploads/2017/08/slide-3.jpg"
+                title={profession.title}
+                description={profession.description}
+            />
+            <Tasks
+                marginTop={100}
+                marginBottom={100}
+                tasks={professionAdapter.tasks(profession)}
+            />
+            <Map
+                marginTop={100}
+                marginBottom={100}
+                pointers={professionAdapter.mapPointer(profession)}
+            />
+            <Skills
+                skills={professionAdapter.skills(profession)}
+                marginTop={100}
+                marginBottom={100}
+            />
+            <Specialties
+                bachelors={professionAdapter.bachelors(profession)}
+                masters={professionAdapter.masters(profession)}
+                dpo={professionAdapter.dpo(profession)}
+                marginTop={100}
+                marginBottom={100}
+            />
+            <Vacancies />
+            <Partners
+                partners={professionAdapter.partners(profession)}
+                marginTop={100}
+                marginBottom={100}
+            />
+            <Links
+                links={professionAdapter.links(profession)}
+                marginTop={100}
+                marginBottom={100}
+            />
+            <Feedback />
+        </Container>
+    );
+};
 
 export default HomePage;

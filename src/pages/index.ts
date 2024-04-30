@@ -1,3 +1,4 @@
 export { HomePage } from './home';
 export { SpecialtiesPage } from './specialties';
-export { Page } from './page';
+export { Error } from './error';
+export { Loading } from './loading';
