@@ -1,12 +1,13 @@
+import { FC } from 'react';
+
 import {
     Text,
     ProCard,
     PartnerCard,
 } from 'shared/ui';
 
-import { FC } from 'react';
-import { Routes } from 'shared/config';
 import { PartnersProps } from './types';
+
 import styles from './partners.module.scss';
 
 export const Partners: FC<PartnersProps> = ({
@@ -28,11 +29,10 @@ export const Partners: FC<PartnersProps> = ({
                 ))}
             </div>
             <ProCard
-                to={Routes.MAIN}
+                to="https://mospolytech.ru/obuchauschimsya/trudoustrojstvo/"
                 color="blue"
-                header="Все партнёры Московского Политеха"
-                body="Пара слов о трудоустройстве студентов
-                      Московского Политеха в компании партнёров"
+                header="Подробнее о партнерах Московского Политеха"
+                body="Узнать о возможности прохождения практики и стажировки"
             />
         </div>
     </div>

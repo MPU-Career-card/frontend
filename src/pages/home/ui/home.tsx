@@ -1,6 +1,6 @@
-/* eslint-disable max-len */
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { AxiosError } from 'axios';
 
 import {
     Tasks,
@@ -17,7 +17,6 @@ import { Container } from 'shared/ui';
 import { Profession, ProfessionParams } from 'shared/types';
 import { professionAdapter, professionsApi } from 'shared/lib';
 
-import { AxiosError } from 'axios';
 import { Error } from '../../error';
 import { Loading } from '../../loading';
 

@@ -4,8 +4,8 @@ import { Error, HomePage, SpecialtiesPage } from 'pages';
 import { Routes } from 'shared/config';
 
 export const routerConfig: Record<Routes, RouteProps> = {
-    [Routes.MAIN]: {
-        path: `${Routes.MAIN}:professionTitle`,
+    [Routes.PROFESSION]: {
+        path: Routes.PROFESSION,
         element: <HomePage />,
     },
     [Routes.SPECIALITY]: {

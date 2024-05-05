@@ -10,3 +10,4 @@ export { Footer } from './footer';
 export { Promo } from './promo';
 export { Vacancies } from './vacancies';
 export { Feedback } from './feedback';
+export { SpecialitiesPromo } from './specilities-promo';

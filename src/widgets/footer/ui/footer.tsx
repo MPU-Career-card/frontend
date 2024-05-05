@@ -23,7 +23,7 @@ export const Footer: FC<FooterProps> = ({
         marginBottom={marginBottom}
         justify="center"
     >
-        <Link to={Routes.MAIN}>
+        <Link to={Routes.PROFESSION}>
             <Flex gap={8}>
                 <Logo />
             </Flex>

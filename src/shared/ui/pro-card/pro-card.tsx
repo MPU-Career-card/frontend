@@ -66,7 +66,7 @@ export const ProCard: FC<ProCardProps> = ({
                     </Text>
                 )}
             </Flex>
-            <Flex gap={8} justify="end">
+            <Flex className={styles.footer} gap={8} justify="end">
                 {tags?.map((tag) => (
                     <Tag size="xs" color={tagColor}>
                         {tag}

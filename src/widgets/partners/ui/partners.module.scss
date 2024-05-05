@@ -18,6 +18,6 @@
 @media (max-width: 840px) {
   .grid {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: min-content 1fr;
   }
 }

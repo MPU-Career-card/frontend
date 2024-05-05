@@ -1,0 +1,61 @@
+%glass-background {
+  background: rgba(255, 255, 255, 0.68);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.4px);
+  -webkit-backdrop-filter: blur(13.4px);
+  border: 1px solid rgba(255, 255, 255, 0.73);
+}
+
+%black-glass-background {
+  background: rgba(0, 0, 0, 0.68);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.4px);
+  -webkit-backdrop-filter: blur(13.4px);
+  border: 1px solid rgba(0, 0, 0, 0.73);
+}
+
+.promo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 785px;
+  border-radius: 24px;
+}
+
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  @extend %glass-background;
+}
+
+.info {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  right: 40px;
+  max-width: 45%;
+}
+
+.title {
+  padding: 15px;
+  margin-bottom: 20px;
+  @extend %black-glass-background;
+}
+
+.description {
+  padding: 10px;
+  @extend %glass-background;
+}
+
+@media (max-width: 740px) {
+  .info {
+    max-width: 100%;
+  }
+}

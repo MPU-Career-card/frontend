@@ -24,6 +24,7 @@ export const Accordion: FC<AccordionProps> = ({
         <div className={cn(className, styles.accordion)}>
             <button
                 type="button"
+                className={styles.header}
                 onClick={toggleAccordion}
             >
                 <Flex

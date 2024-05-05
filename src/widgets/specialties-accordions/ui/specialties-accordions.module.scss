@@ -10,3 +10,9 @@
 .accordion__header {
     transition: 0.2s ease-in-out;
 }
+
+.cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(max(300px, 30%), 1fr));
+}

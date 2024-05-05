@@ -12,7 +12,7 @@ export const Header = () => (
     <header className={styles.header}>
         <Container>
             <Flex justify="space-between">
-                <Link to={Routes.MAIN}>
+                <Link to={Routes.PROFESSION}>
                     <Flex gap={8}>
                         <Logo />
                         <Text
@@ -29,7 +29,7 @@ export const Header = () => (
                     <Text
                         color="white"
                         size="s"
-                        to={Routes.MAIN}
+                        to={Routes.PROFESSION}
                         caps
                     >
                         Главная
@@ -37,7 +37,7 @@ export const Header = () => (
                     <Text
                         color="white"
                         size="s"
-                        to={Routes.MAIN}
+                        to={Routes.PROFESSION}
                         caps
                     >
                         Профессии
