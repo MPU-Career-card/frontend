@@ -4,19 +4,23 @@ import {
     Flex,
     Input,
     Accordion,
+    Tag,
 } from 'shared/ui';
 import { SearchIcon } from 'shared/icons';
 import { cn } from 'shared/lib';
 
+import { SpecialtiesCards } from '../../specialties-cards';
+
 import { SpecialtiesAccordionsProps } from './types';
 
 import styles from './faculties-accordions.module.scss';
-import { SpecialtiesCards } from '../../specialties-cards';
 
 export const FacultiesAccordions: FC<SpecialtiesAccordionsProps> = ({
-    faculties,
+    specialities,
     marginTop,
     marginBottom,
+    getSpecialities,
+    onSearchInputChange,
 }) => (
     <div
         className={cn(styles.specialtiesAccordions)}
@@ -29,16 +33,38 @@ export const FacultiesAccordions: FC<SpecialtiesAccordionsProps> = ({
             <Input
                 icon={<SearchIcon />}
                 placeholder="Поиск по профессиям и специальностям"
+                onChange={onSearchInputChange}
             />
-            {faculties.map((faculty) => (
+            {Object.entries(specialities).map(([faculty, speciality]) => (
                 <Accordion
                     key={faculty}
                     text={faculty}
+                    onOpen={() => getSpecialities(faculty)}
                 >
-                    <SpecialtiesCards
-                        key={faculty}
-                        faculty={faculty}
-                    />
+                    {
+                        speciality.map(({
+                            id,
+                            code,
+                            color,
+                            name,
+                            professions,
+                        }) => (
+                            <Accordion
+                                key={id}
+                                text={name}
+                                tags={(
+                                    <Tag
+                                        textColor="white"
+                                        style={{ backgroundColor: `#${color}` }}
+                                    >
+                                        {code}
+                                    </Tag>
+                                )}
+                            >
+                                <SpecialtiesCards professions={professions} />
+                            </Accordion>
+                        ))
+                    }
                 </Accordion>
             ))}
         </Flex>

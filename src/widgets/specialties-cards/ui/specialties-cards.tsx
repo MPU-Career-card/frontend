@@ -1,78 +1,32 @@
-import React, { FC, useEffect, useState } from 'react';
-import { AxiosError } from 'axios';
+import React, { FC } from 'react';
 
-import { ProCard, Spinner, Error } from 'shared/ui';
-import { getFaculty } from 'shared/lib';
-import { Profession } from 'shared/types';
+import { ProCard } from 'shared/ui';
 
 import { SpecialtiesCardsProps } from './types';
 
 import styles from './specialties-cards.module.scss';
 
 export const SpecialtiesCards: FC<SpecialtiesCardsProps> = ({
-    faculty,
+    professions,
     marginTop,
     marginBottom,
-}) => {
-    const [specialities, setSpecilities] = useState<Profession[]>([]);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [errorStatus, setErrorStatus] = useState<number>();
-    const [errorText, setErrorText] = useState<string>();
-
-    const getSpecialities = async () => {
-        try {
-            setIsLoading(true);
-
-            const { data } = await getFaculty(faculty);
-
-            setSpecilities(data.professions);
-        } catch (err) {
-            if (err instanceof AxiosError) {
-                const { status, data: { detail } } = err.response || { data: {} };
-
-                setErrorStatus(status);
-                setErrorText(detail);
-            }
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        getSpecialities();
-    }, []);
-
-    if (isLoading) {
-        return <Spinner />;
-    }
-
-    if (errorStatus || errorText) {
-        return (
-            <Error
-                status={errorStatus}
-                description={errorText}
+}) => (
+    <div
+        className={styles.cards}
+        style={{ marginTop, marginBottom }}
+    >
+        {professions.map(({
+            id,
+            name,
+            description,
+        }) => (
+            <ProCard
+                key={id}
+                to={`/${name}`}
+                color="white"
+                header={name}
+                body={description}
             />
-        );
-    }
-
-    return (
-        <div
-            className={styles.cards}
-            style={{ marginTop, marginBottom }}
-        >
-            {specialities.map(({
-                id,
-                title,
-                description,
-            }) => (
-                <ProCard
-                    key={id}
-                    to={`/${title}`}
-                    color="white"
-                    header={title}
-                    body={description}
-                />
-            ))}
-        </div>
-    );
-};
+        ))}
+    </div>
+);

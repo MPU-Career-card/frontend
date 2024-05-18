@@ -9,12 +9,14 @@ export const Input: FC<InputProps> = ({
     placeholder,
     icon,
     variant = 'rounded',
+    ...props
 }) => (
     <div className={styles[variant]}>
         { icon }
         <input
             placeholder={placeholder}
             type={type}
+            {...props}
         />
     </div>
 );

@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import {
+    ChangeEvent, useEffect, useRef, useState,
+} from 'react';
 import { AxiosError } from 'axios';
 
 import {
@@ -7,24 +9,36 @@ import {
     FacultiesAccordions,
 } from 'widgets';
 import { Container } from 'shared/ui';
-import { facultiesApi } from 'shared/lib';
+import {
+    debounce,
+    facultiesApi,
+    getFaculty,
+    searchSpecialities,
+} from 'shared/lib';
+import { Specialities } from 'shared/types';
 
 import { Loading } from '../../loading';
 import { Error } from '../../error';
 
 const SpecialtiesPage = () => {
-    const [faculties, setFaculties] = useState<string[]>([]);
+    const [specialities, setSpecialities] = useState<Specialities>({});
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [errorStatus, setErrorStatus] = useState<number>();
     const [errorText, setErrorText] = useState<string>();
+
+    const isSearching = useRef<boolean>(false);
 
     const getFaculties = async () => {
         try {
             setIsLoading(true);
 
-            const { data } = await facultiesApi.get<string[]>('');
+            const { data: faculties } = await facultiesApi.get<string[]>('');
+            const specialities = faculties.reduce((acc, faculty) => ({
+                ...acc,
+                [faculty]: [],
+            }), {});
 
-            setFaculties(data);
+            setSpecialities(specialities);
         } catch (err) {
             if (err instanceof AxiosError) {
                 const { status, data: { detail } } = err.response || { data: {} };
@@ -35,6 +49,62 @@ const SpecialtiesPage = () => {
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const getSpecialities = async (faculty: string) => {
+        if (isSearching.current) return;
+
+        try {
+            const { data } = await getFaculty(faculty);
+
+            setSpecialities((specialities) => ({
+                ...specialities,
+                [faculty]: data.specialities,
+            }));
+        } catch (err) {
+            if (err instanceof AxiosError) {
+                const { status, data: { detail } } = err.response || { data: {} };
+
+                setErrorStatus(status);
+                setErrorText(detail);
+            }
+        }
+    };
+
+    const search = async (search: string) => {
+        if (!search) {
+            isSearching.current = false;
+            getFaculties();
+
+            return;
+        }
+
+        try {
+            isSearching.current = true;
+
+            const { data } = await searchSpecialities(search);
+            const specialities: Specialities = Object.keys(data).reduce((acc, faculty) => ({
+                ...acc,
+                [faculty]: data[faculty].specialities,
+            }), {});
+
+            console.log({ specialities });
+
+            setSpecialities(specialities);
+        } catch (err) {
+            if (err instanceof AxiosError) {
+                const { status, data: { detail } } = err.response || { data: {} };
+
+                setErrorStatus(status);
+                setErrorText(detail);
+            }
+        }
+    };
+
+    const debouncedSearch = debounce(search, 300);
+
+    const onSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        debouncedSearch(e.target.value);
     };
 
     useEffect(() => {
@@ -62,7 +132,9 @@ const SpecialtiesPage = () => {
                 будущей профессией и выбрать нужное направление подготовки в Московском Политехе"
             />
             <FacultiesAccordions
-                faculties={faculties}
+                specialities={specialities}
+                getSpecialities={getSpecialities}
+                onSearchInputChange={onSearchInputChange}
                 marginTop={100}
                 marginBottom={100}
             />

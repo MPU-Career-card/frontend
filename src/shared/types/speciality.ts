@@ -1,4 +1,4 @@
-interface Profession {
+export interface Profession {
   id: number;
   name: string;
   description: string;
@@ -6,9 +6,11 @@ interface Profession {
 
 export interface Speciality {
   id: number;
-  tiker: string;
+  faculty: string;
   color: string;
   code: string;
   name: string;
   professions: Profession[];
 }
+
+export type Specialities = Record<string, Speciality[]>;

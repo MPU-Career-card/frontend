@@ -10,5 +10,8 @@ export {
     specialitiesApi,
     facultiesApi,
     getFaculty,
+    searchFacultiesApi,
+    searchSpecialities,
 } from './api';
 export { professionAdapter } from './profession-adapters';
+export { debounce } from './debounce';

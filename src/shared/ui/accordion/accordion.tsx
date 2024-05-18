@@ -13,11 +13,19 @@ export const Accordion: FC<AccordionProps> = ({
     tags,
     text,
     className,
+    onOpen,
 }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const sizeCategory = useWindowDimensions();
     const toggleAccordion = () => {
-        setIsOpen((isOpen) => !isOpen);
+        const open = !isOpen;
+
+        if (open && onOpen) {
+            console.log('open');
+            onOpen();
+        }
+
+        setIsOpen(open);
     };
 
     return (
