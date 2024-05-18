@@ -6,4 +6,5 @@ export type ArrowLinkProps = ComponentProps<'div'> & {
     color: Color;
     to: string;
     width?: number;
+    linkTag?: 'link' | 'a';
 };

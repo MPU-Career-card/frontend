@@ -32,10 +32,6 @@ export const SpecialityContent = memo<SpecialityContentProps>(({
                         to={link}
                         faculty={faculty}
                         name={speciality}
-                        budgetPlacesCount={{ value: 35, year: 2024 }}
-                        passingScore={{ value: 295, year: 2023 }}
-                        price={{ value: 268200, year: 2023 }}
-                        period={4}
                     />
                 ))}
             </Flex>
@@ -58,10 +54,6 @@ export const SpecialityContent = memo<SpecialityContentProps>(({
                         to={link}
                         faculty={faculty}
                         name={speciality}
-                        budgetPlacesCount={{ value: 35, year: 2024 }}
-                        passingScore={{ value: 295, year: 2023 }}
-                        price={{ value: 268200, year: 2023 }}
-                        period={4}
                     />
                 ))}
             </Flex>
@@ -84,10 +76,6 @@ export const SpecialityContent = memo<SpecialityContentProps>(({
                         to={link}
                         faculty={faculty}
                         name={speciality}
-                        budgetPlacesCount={{ value: 35, year: 2024 }}
-                        passingScore={{ value: 295, year: 2023 }}
-                        price={{ value: 268200, year: 2023 }}
-                        period={4}
                     />
                 ))}
             </Flex>

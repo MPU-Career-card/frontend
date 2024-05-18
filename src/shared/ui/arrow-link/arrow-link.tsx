@@ -14,6 +14,7 @@ export const ArrowLink: FC<ArrowLinkProps> = ({
     to,
     color,
     className,
+    linkTag = 'link',
 }) => {
     const getArrowColor = (color: Color) => {
         if (['yellow', 'transparent', 'silver', 'white'].includes(color)) {
@@ -23,21 +24,23 @@ export const ArrowLink: FC<ArrowLinkProps> = ({
         return 'white';
     };
 
-    return (
-        <Link to={to} target="_blank">
-            <div
-                style={{ width, height: width }}
-                className={cn(
-                    className,
-                    styles['arrow-link'],
-                    color,
-                )}
-            >
-                <Arrow
-                    fill={getArrowColor(color)}
-                    style={{ width: '25%', height: '25%' }}
-                />
-            </div>
-        </Link>
+    const content = (
+        <div
+            style={{ width, height: width }}
+            className={cn(
+                className,
+                styles['arrow-link'],
+                color,
+            )}
+        >
+            <Arrow
+                fill={getArrowColor(color)}
+                style={{ width: '25%', height: '25%' }}
+            />
+        </div>
     );
+
+    return linkTag === 'link'
+        ? <Link to={to} target="_blank">{content}</Link>
+        : <a href={to} target="_blank" rel="noreferrer">{content}</a>;
 };

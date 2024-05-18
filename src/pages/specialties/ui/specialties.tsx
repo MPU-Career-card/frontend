@@ -2,30 +2,29 @@ import { useEffect, useState } from 'react';
 import { AxiosError } from 'axios';
 
 import {
-    SpecialtiesAccordions,
     Footer,
     SpecialitiesPromo,
+    FacultiesAccordions,
 } from 'widgets';
 import { Container } from 'shared/ui';
-import { Speciality } from 'shared/types';
-import { specialitiesApi } from 'shared/lib';
+import { facultiesApi } from 'shared/lib';
 
 import { Loading } from '../../loading';
 import { Error } from '../../error';
 
 const SpecialtiesPage = () => {
-    const [specialities, setSpecialities] = useState<Speciality[]>();
+    const [faculties, setFaculties] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [errorStatus, setErrorStatus] = useState<number>();
     const [errorText, setErrorText] = useState<string>();
 
-    const getSpecialities = async () => {
+    const getFaculties = async () => {
         try {
             setIsLoading(true);
 
-            const { data } = await specialitiesApi.get<Speciality[]>('');
+            const { data } = await facultiesApi.get<string[]>('');
 
-            setSpecialities(data);
+            setFaculties(data);
         } catch (err) {
             if (err instanceof AxiosError) {
                 const { status, data: { detail } } = err.response || { data: {} };
@@ -39,14 +38,14 @@ const SpecialtiesPage = () => {
     };
 
     useEffect(() => {
-        getSpecialities();
+        getFaculties();
     }, []);
 
     if (isLoading) {
         return <Loading />;
     }
 
-    if (!specialities) {
+    if (errorStatus || errorText) {
         return (
             <Error
                 status={errorStatus}
@@ -60,15 +59,13 @@ const SpecialtiesPage = () => {
                 image={`${process.env.PUBLIC_URL}/assets/promo.jpg`}
                 title="Карьерные карты"
                 description="- это проект, который поможет тебе определиться с
-                будущей профессией и выбрать нужное направление подготовки в нашем
-                университете"
+                будущей профессией и выбрать нужное направление подготовки в Московском Политехе"
             />
-            <SpecialtiesAccordions
-                specialities={specialities}
+            <FacultiesAccordions
+                faculties={faculties}
                 marginTop={100}
                 marginBottom={100}
             />
-            {/* <Links links={[]} marginTop={100} marginBottom={64} /> */}
             <Footer />
         </Container>
     );

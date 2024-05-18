@@ -45,6 +45,7 @@ export const Links: FC<LinksProps> = ({
                         to={to}
                         color="yellow"
                         highlight={false}
+                        linkTag="a"
                     >
                         <Text size="m" weight="semi">
                             {title}

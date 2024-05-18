@@ -16,6 +16,7 @@ export const CardLink: FC<CardLinkProps> = ({
     isResponsiveHeight = false,
     isFullWidth = false,
     isFullHeight = false,
+    linkTag = 'link',
     ...props
 }) => (
     <div
@@ -38,6 +39,7 @@ export const CardLink: FC<CardLinkProps> = ({
                 width={highlight ? 64 : 38}
                 to={to}
                 color={color}
+                linkTag={linkTag}
             />
         </div>
     </div>
