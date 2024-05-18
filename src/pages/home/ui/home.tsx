@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AxiosError } from 'axios';
 
@@ -50,6 +50,14 @@ const HomePage = () => {
         getProfession();
     }, []);
 
+    const imgLink = useMemo(() => {
+        if (!profession?.image_link || profession.image_link === '-') {
+            return 'https://www.gofraprime.ru/wp-content/uploads/2017/08/slide-3.jpg';
+        }
+
+        return profession.image_link;
+    }, [profession]);
+
     if (isLoading) {
         return <Loading />;
     }
@@ -66,7 +74,7 @@ const HomePage = () => {
     return (
         <Container>
             <Promo
-                image="https://www.gofraprime.ru/wp-content/uploads/2017/08/slide-3.jpg"
+                image={imgLink}
                 title={profession.title}
                 description={profession.description}
             />

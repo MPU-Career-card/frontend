@@ -5,5 +5,10 @@ export { NBSP } from './formatters';
 export { useWindowDimensions } from './window-dimension';
 export { getPrice } from './get-price';
 export { numberFormatter } from './number-formatter';
-export { professionsApi, specialitiesApi } from './api';
+export {
+    professionsApi,
+    specialitiesApi,
+    facultiesApi,
+    getFaculty,
+} from './api';
 export { professionAdapter } from './profession-adapters';

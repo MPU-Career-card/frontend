@@ -18,3 +18,4 @@ export { SpecialityCard, type SpecialityCardProps } from './speciality-card';
 export { Accordion } from './accordion';
 export { FormInput, type FormInputProps } from './form-input';
 export { PartnerCard, type PartnerCardProps } from './partner-card';
+export { Error } from './error';
