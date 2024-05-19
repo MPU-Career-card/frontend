@@ -19,3 +19,4 @@ export { Accordion } from './accordion';
 export { FormInput, type FormInputProps } from './form-input';
 export { PartnerCard, type PartnerCardProps } from './partner-card';
 export { Error } from './error';
+export { Image } from './image';

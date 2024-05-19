@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import { Text } from '../text';
 import { Flex } from '../flex';
+import { Image } from '../image';
 
 import { CardProps } from './types';
 
@@ -31,9 +32,9 @@ export const Card: FC<CardProps> = ({
                 )}
                 {image
                   && (
-                      <img
+                      <Image
                           src={image}
-                          alt="skill"
+                          alt={null}
                       />
                   )}
             </Flex>

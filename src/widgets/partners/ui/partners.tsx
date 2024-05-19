@@ -21,8 +21,9 @@ export const Partners: FC<PartnersProps> = ({
         </Text>
         <div className={styles.grid}>
             <div className={styles.cards}>
-                {partners.map(({ to, image }) => (
+                {partners.map(({ to, image, name }) => (
                     <PartnerCard
+                        name={name}
                         to={to}
                         image={image}
                     />

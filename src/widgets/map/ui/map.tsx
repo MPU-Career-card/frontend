@@ -58,8 +58,11 @@ export const Map: FC<MapProps> = ({
                                 })}
                                 fill={colorMap[index]}
                             />
-                            <Text size="l" color={selectedPointerIndex === index ? 'white' : 'greyTransparent'} breakWords>
-                                {getShortString(title)}
+                            <Text
+                                size="l"
+                                color={selectedPointerIndex === index ? 'white' : 'greyTransparent'}
+                            >
+                                {title}
                             </Text>
                         </button>
                     ))}
