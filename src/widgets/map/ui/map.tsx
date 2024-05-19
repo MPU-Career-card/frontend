@@ -2,7 +2,7 @@
 import { Flex, Text } from 'shared/ui';
 
 import React, { FC, useState } from 'react';
-import { cn, useWindowDimensions } from 'shared/lib';
+import { cn, getShortString, useWindowDimensions } from 'shared/lib';
 import { CareerPointer } from 'shared/icons/careerPointer';
 
 import { MapProps } from './types';
@@ -59,7 +59,7 @@ export const Map: FC<MapProps> = ({
                                 fill={colorMap[index]}
                             />
                             <Text size="l" color={selectedPointerIndex === index ? 'white' : 'greyTransparent'} breakWords>
-                                {title}
+                                {getShortString(title)}
                             </Text>
                         </button>
                     ))}

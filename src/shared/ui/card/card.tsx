@@ -29,7 +29,13 @@ export const Card: FC<CardProps> = ({
                         {title}
                     </Text>
                 )}
-                {image && <img src={image} alt={title} />}
+                {image
+                  && (
+                      <img
+                          src={image}
+                          alt="skill"
+                      />
+                  )}
             </Flex>
         )}
         {text && (

@@ -13,6 +13,10 @@ export const PartnerCard: FC<PartnerCardProps> = ({
         to={to}
         className={styles.card}
     >
-        <img className={styles.image} src={image} alt={to} />
+        <img
+            className={styles.image}
+            src={image}
+            alt="partner"
+        />
     </Link>
 );

@@ -7,10 +7,10 @@ export interface MapPointer {
 }
 
 export interface Skill {
-  id: number
-  name: string
+  id: number,
+  name: string,
   description: string
-  svg: string
+  image_link: string
   profession: number
 }
 

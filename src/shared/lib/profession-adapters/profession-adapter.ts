@@ -16,9 +16,9 @@ export const professionAdapter = {
     })),
     skills: (
         profession: Profession,
-    ) => profession.skills.map(({ name, description, svg }) => ({
+    ) => profession.skills.map(({ name, description, image_link }) => ({
         title: name,
-        image: svg,
+        image: image_link,
         description,
     })),
     bachelors: (
@@ -45,8 +45,8 @@ export const professionAdapter = {
     partners: (
         profession: Profession,
     ) => profession.partners.slice(0, 3).map(({ link, image_link }) => ({
-        to: link,
-        image: image_link,
+        to: image_link.trim(),
+        image: link.trim(),
     })),
     links: (
         profession: Profession,

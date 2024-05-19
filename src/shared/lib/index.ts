@@ -15,3 +15,4 @@ export {
 } from './api';
 export { professionAdapter } from './profession-adapters';
 export { debounce } from './debounce';
+export { getShortString } from './get-short-string';
