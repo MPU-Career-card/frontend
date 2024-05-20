@@ -45,8 +45,8 @@ export const professionAdapter = {
     partners: (
         profession: Profession,
     ) => profession.partners.map(({ link, image_link, name }) => ({
-        to: image_link.trim(),
-        image: link.trim(),
+        to: link.trim(),
+        image: image_link.trim(),
         name,
     })),
     links: (

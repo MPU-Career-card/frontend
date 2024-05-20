@@ -23,8 +23,8 @@ export const Partners: FC<PartnersProps> = ({
             <div className={styles.cards}>
                 {partners.map(({ to, image, name }) => (
                     <PartnerCard
-                        name={name}
                         to={to}
+                        name={name}
                         image={image}
                     />
                 ))}
