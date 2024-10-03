@@ -1,6 +1,17 @@
 .wrapper {
-  display: grid;
+  display: flex;
+  flex-direction: column; 
+  gap: 16px; 
+}
+
+.cardContainer {
+  display: grid; 
   grid-template-columns: repeat(auto-fill, minmax(max(220px, 30%), 1fr));
   grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
+  gap: 16px; 
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 16px; 
 }

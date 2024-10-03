@@ -30,7 +30,7 @@
     line-height: var(--font-line-s);
 
     &::placeholder {
-      color: var(--white);
+      color: rgba(255, 255, 255, 0.6);
     }
   }
 }
