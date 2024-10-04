@@ -25,13 +25,14 @@ export const SpecialitiesPromo: FC<PromoProps> = ({ image, title, description })
                         size={['xs', 's', 'm'].includes(size) ? 'xl2' : 'xl3'}
                         weight="bold"
                         color="white"
+                        view="montserrat"
                         zIndex={2}
                     >
                         {title}
                     </Text>
                 </div>
                 <div className={styles.description}>
-                    <Text size="l" weight="semi">
+                    <Text size="xs" view="montserrat">
                         {description}
                     </Text>
                 </div>

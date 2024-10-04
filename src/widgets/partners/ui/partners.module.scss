@@ -7,12 +7,13 @@
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(max(150px, 30%), 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
   gap: 16px;
 }
 
 .title {
   margin-bottom: 32px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 840px) {

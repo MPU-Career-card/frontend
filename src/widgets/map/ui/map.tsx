@@ -29,7 +29,7 @@ export const Map: FC<MapProps> = ({
             className={cn(styles.map)}
             style={{ marginTop, marginBottom }}
         >
-            <Text size="xl2" color="white">
+            <Text size="xl2" color="white" view="montserrat">
                 Карьерный путь
             </Text>
             <Flex
@@ -61,6 +61,7 @@ export const Map: FC<MapProps> = ({
                             <Text
                                 size="l"
                                 color={selectedPointerIndex === index ? 'white' : 'greyTransparent'}
+                                view="montserrat"
                             >
                                 {title}
                             </Text>
@@ -77,14 +78,14 @@ export const Map: FC<MapProps> = ({
                 </div>
                 <Flex direction="vertical" gap={24} align="start">
                     <div>
-                        <Text size="l" color="white">
+                        <Text size="l" color="white" view="montserrat">
                             {pointers[selectedPointerIndex].title}
                         </Text>
-                        <Text size="l" color="pink">
+                        <Text size="l" color="pink" view="montserrat">
                             {pointers[selectedPointerIndex].salary}
                         </Text>
                     </div>
-                    <Text color="white">
+                    <Text color="white" view="montserrat">
                         {pointers[selectedPointerIndex].description}
                     </Text>
                 </Flex>

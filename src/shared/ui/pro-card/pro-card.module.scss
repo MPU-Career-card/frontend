@@ -1,7 +1,18 @@
 .content {
     margin-bottom: 32px;
+    
 }
 
 .footer {
   padding-right: 96px;
+  max-width: 80%;
+}
+
+.short-card {
+  padding: 16px; /* Уменьшение внутренних отступов */
+  max-height: 150px; /* Ограничение высоты */
+  overflow: hidden; /* Обрезка содержимого, если оно выходит за границы */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Размещение элементов равномерно по высоте */
 }
