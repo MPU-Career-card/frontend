@@ -29,12 +29,14 @@ export const Partners: FC<PartnersProps> = ({
                     />
                 ))}
             </div>
-            <ProCard
-                to="https://mospolytech.ru/obuchauschimsya/trudoustrojstvo/"
-                color="blue"
-                header="Подробнее о партнерах Московского Политеха"
-                body="Узнать о возможности прохождения практики и стажировки"
-            />
+            <div className="short-card">
+                <ProCard
+                    to="https://mospolytech.ru/obuchauschimsya/trudoustrojstvo/"
+                    color="blue"
+                    header="Подробнее о партнерах Московского Политеха"
+                    body="Узнать о возможности прохождения практики и стажировки"
+                />
+            </div>
         </div>
     </div>
 );

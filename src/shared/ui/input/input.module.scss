@@ -12,7 +12,7 @@
     color: #a4a4af;
     width: 100%;
     background: transparent;
-    font-family: var(--font-family-gilroy);
+    font-family: var( --font-family-montserrat);
   }
 }
 
@@ -25,12 +25,12 @@
     background: transparent;
     width: 100%;
     color: var(--white);
-    font-family: var(--font-family-gilroy);
+    font-family: var(--font-family-montserrat);
     font-size: var(--font-size-s);
     line-height: var(--font-line-s);
 
     &::placeholder {
-      color: var(--white);
+      color: rgba(255, 255, 255, 0.6);
     }
   }
 }

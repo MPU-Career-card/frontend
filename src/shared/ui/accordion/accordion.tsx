@@ -42,7 +42,7 @@ export const Accordion: FC<AccordionProps> = ({
                     {tags}
                     {!['xs'].includes(sizeCategory) && (
                         <Text
-                            size="xl"
+                            size="l"
                             weight="medium"
                             className={styles.text}
                         >
@@ -60,7 +60,7 @@ export const Accordion: FC<AccordionProps> = ({
                 </Flex>
                 {['xs'].includes(sizeCategory) && (
                     <Text
-                        size="xl"
+                        size="s"
                         weight="medium"
                         className={styles.textBottom}
                     >
