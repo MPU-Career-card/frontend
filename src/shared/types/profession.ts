@@ -49,6 +49,7 @@ export interface Task {
   title: string
   text: string
   profession: number
+  image_link: string
 }
 
 export interface Profession {

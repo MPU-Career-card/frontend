@@ -20,20 +20,23 @@ export const Promo: FC<PromoProps> = ({ image, title, description }) => {
             <div className={styles.logo}>
                 <Logo />
             </div>
-            <div className={styles.title}>
-                <Text
-                    style={{ fontSize: size === 'xs' ? '24px' : '52px', lineHeight: 1 }}
-                    weight="medium"
-                    zIndex={2}
-                >
-                    {title}
-                </Text>
-            </div>
-            <div className={styles.decorative} />
-            <div className={styles.description}>
-                <Text size="s">
-                    {description}
-                </Text>
+            <div className={styles.info}>
+                <div className={styles.title}>
+                    <Text
+                        size={['xs', 's', 'm'].includes(size) ? 'xl2' : 'xl3'}
+                        weight="bold"
+                        color="white"
+                        view="montserrat"
+                        zIndex={2}
+                    >
+                        {title}
+                    </Text>
+                </div>
+                <div className={styles.description}>
+                    <Text size="xs" view="montserrat">
+                        {description}
+                    </Text>
+                </div>
             </div>
         </div>
     );

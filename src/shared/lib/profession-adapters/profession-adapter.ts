@@ -10,9 +10,10 @@ export const professionAdapter = {
     })),
     tasks: (
         profession: Profession,
-    ) => profession.tasks.map(({ title, text }) => ({
+    ) => profession.tasks.map(({ title, text, image_link }) => ({
         title,
         description: text,
+        image: image_link,
     })),
     skills: (
         profession: Profession,
