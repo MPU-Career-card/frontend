@@ -8,7 +8,13 @@
 .mapContainer {
     position: relative;
 }
-
+.salary {
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 5px 10px;
+    width: fit-content;
+}
 .l {
     zoom: 0.9;
     transform: scale(0.9);
