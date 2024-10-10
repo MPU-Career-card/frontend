@@ -81,7 +81,12 @@ export const Map: FC<MapProps> = ({
                         <Text size="l" color="white" view="montserrat">
                             {pointers[selectedPointerIndex].title}
                         </Text>
-                        <Text size="l" color="pink" view="montserrat">
+                        <Text
+                            className={cn(styles.salary)}
+                            size={['xs', 's', 'm'].includes(size) ? 's' : 'l'}
+                            color="pink"
+                            view="montserrat"
+                        >
                             {pointers[selectedPointerIndex].salary}
                         </Text>
                     </div>

@@ -23,7 +23,7 @@ export const Promo: FC<PromoProps> = ({ image, title, description }) => {
             <div className={styles.info}>
                 <div className={styles.title}>
                     <Text
-                        size={['xs', 's', 'm'].includes(size) ? 'xl2' : 'xl3'}
+                        size={['xs', 's', 'm'].includes(size) ? 'l' : 'xl3'}
                         weight="bold"
                         color="white"
                         view="montserrat"
@@ -33,7 +33,10 @@ export const Promo: FC<PromoProps> = ({ image, title, description }) => {
                     </Text>
                 </div>
                 <div className={styles.description}>
-                    <Text size="xs" view="montserrat">
+                    <Text
+                        size={['xs', 's', 'm'].includes(size) ? 'xs2' : 'xs'}
+                        view="montserrat"
+                    >
                         {description}
                     </Text>
                 </div>
