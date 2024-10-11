@@ -33,6 +33,13 @@
   padding: 32px 34px;
   width: 50%;
 }
+.logo {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 @media (max-width: 1000px) {
   .wrapper {
