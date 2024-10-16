@@ -12,6 +12,7 @@ import {
     Promo,
     Vacancies,
     Feedback,
+    Footer,
 } from 'widgets';
 import { Container } from 'shared/ui';
 import { Profession, ProfessionParams } from 'shared/types';
@@ -112,6 +113,7 @@ const HomePage = () => {
                 marginBottom={100}
             />
             <Feedback />
+            <Footer />
         </Container>
     );
 };
