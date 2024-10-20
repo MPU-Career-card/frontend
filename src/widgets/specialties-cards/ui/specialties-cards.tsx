@@ -26,6 +26,7 @@ export const SpecialtiesCards: FC<SpecialtiesCardsProps> = ({
                 color="white"
                 header={name}
                 body={description}
+                isMobileProps
             />
         ))}
     </div>

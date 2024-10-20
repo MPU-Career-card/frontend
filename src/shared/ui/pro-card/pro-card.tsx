@@ -16,6 +16,7 @@ export const ProCard: FC<ProCardProps> = ({
     isResponsiveHeight = false,
     isFullWidth = false,
     isFullHeight = false,
+    isMobileProps = false,
 }) => {
     const textColor = useMemo(() => {
         if (['purple', 'blue'].includes(color)) {
@@ -40,6 +41,7 @@ export const ProCard: FC<ProCardProps> = ({
             isResponsiveHeight={isResponsiveHeight}
             isFullWidth={isFullWidth}
             isFullHeight={isFullHeight}
+            isMobileProps={isMobileProps}
         >
             <Flex
                 className={styles.content}

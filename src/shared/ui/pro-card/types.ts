@@ -9,4 +9,5 @@ export type ProCardProps = {
   isResponsiveHeight?: boolean;
   isFullWidth?: boolean;
   isFullHeight?: boolean;
+  isMobileProps?: boolean;
 }

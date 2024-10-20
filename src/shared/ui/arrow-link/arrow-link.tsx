@@ -8,6 +8,8 @@ import { ArrowLinkProps } from './types';
 
 import styles from './arrow-link.module.scss';
 import { Color } from '../../types';
+import { Flex } from '../flex/flex';
+import { Text } from '../text/text';
 
 export const ArrowLink: FC<ArrowLinkProps> = ({
     width = 64,
@@ -15,6 +17,7 @@ export const ArrowLink: FC<ArrowLinkProps> = ({
     color,
     className,
     linkTag = 'link',
+    mobile = false,
 }) => {
     const getArrowColor = (color: Color) => {
         if (['yellow', 'transparent', 'silver', 'white'].includes(color)) {
@@ -24,7 +27,17 @@ export const ArrowLink: FC<ArrowLinkProps> = ({
         return 'white';
     };
 
-    const content = (
+    const content = mobile ? (
+        <Flex className={styles.mobileLink} justify="space-between">
+            <Text color="white" size="m">
+                Узнать подробнее
+            </Text>
+            <Arrow
+                fill="white"
+                style={{ width: '20px', height: '20px' }}
+            />
+        </Flex>
+    ) : (
         <div
             style={{ width, height: width }}
             className={cn(

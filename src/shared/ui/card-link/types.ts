@@ -11,4 +11,5 @@ export type CardLinkProps = Omit<ComponentProps<'div'>, 'children'> & {
   isFullWidth?: boolean;
   isFullHeight?: boolean;
   linkTag?: 'link' | 'a';
+  isMobileProps?: boolean;
 }
