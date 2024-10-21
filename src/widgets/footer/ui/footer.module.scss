@@ -11,3 +11,13 @@
     display: flex;
     gap: 5px;
 }
+
+@media (max-width: 545px) {
+  .footer__logo {
+    gap: 20px;
+    margin-right: 10px;
+  }
+  .footer {
+    padding: 25px;
+  }
+}
