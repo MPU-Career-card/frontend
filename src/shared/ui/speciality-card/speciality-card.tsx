@@ -24,6 +24,7 @@ export const SpecialityCard: FC<SpecialityCardProps> = ({
         isResponsiveHeight={isResponsiveHeight}
         className={className}
         linkTag="a"
+        isMobileProps
     >
         <Flex
             className={styles.header}

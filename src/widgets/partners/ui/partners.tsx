@@ -35,6 +35,7 @@ export const Partners: FC<PartnersProps> = ({
                     color="blue"
                     header="Подробнее о партнерах Московского Политеха"
                     body="Узнать о возможности прохождения практики и стажировки"
+                    isMobileProps
                 />
             </div>
         </div>
