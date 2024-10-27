@@ -44,7 +44,7 @@ export const CardLink: FC<CardLinkProps> = ({
             {...props}
         >
             <div className={styles.header}>{children[0]}</div>
-            {(!isMobile) && <div className={styles.footer}>{children[1]}</div>}
+            {(!isMobileProps || !isMobile) && <div className={styles.footer}>{children[1]}</div>}
             <div className={arrowStyle()}>
                 <ArrowLink
                     width={highlight ? 64 : 38}
