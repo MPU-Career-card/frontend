@@ -41,7 +41,6 @@ export const ProCard: FC<ProCardProps> = ({
             isResponsiveHeight={isResponsiveHeight}
             isFullWidth={isFullWidth}
             isFullHeight={isFullHeight}
-            isMobileProps={isMobileProps}
         >
             <Flex
                 className={styles.content}
