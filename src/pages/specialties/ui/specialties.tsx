@@ -23,8 +23,8 @@ import { Error } from '../../error';
 const SpecialtiesPage = () => {
     const [specialities, setSpecialities] = useState<Specialities>({});
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [errorStatus, setErrorStatus] = useState<number>();
-    const [errorText, setErrorText] = useState<string>();
+    const [errorStatus, setErrorStatus] = useState<number | undefined>(undefined);
+    const [errorText, setErrorText] = useState<string | undefined>(undefined);
 
     const isSearching = useRef<boolean>(false);
 
@@ -115,7 +115,7 @@ const SpecialtiesPage = () => {
         return <Loading />;
     }
 
-    if (errorStatus || errorText) {
+    if (errorStatus !== undefined || errorText !== undefined) { // Проверяем наличие ошибки
         return (
             <Error
                 status={errorStatus}
