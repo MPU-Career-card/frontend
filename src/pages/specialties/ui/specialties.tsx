@@ -128,7 +128,7 @@ const SpecialtiesPage = () => {
             <SpecialitiesPromo
                 image={`${process.env.PUBLIC_URL}/assets/promo.jpg`}
                 title="Карьерные карты"
-                description="- это проект, который поможет тебе определиться с
+                description="Проект, который поможет тебе определиться с
                 будущей профессией и выбрать нужное направление подготовки в Московском Политехе"
             />
             <FacultiesAccordions

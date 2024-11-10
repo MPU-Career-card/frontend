@@ -48,7 +48,7 @@ export const Links: FC<LinksProps> = ({
                         linkTag="a"
                         style={{ marginTop: '20px' }}
                     >
-                        <Text size="m" weight="semi" view="montserrat">
+                        <Text size="m" weight="semi" view="gilroy">
                             {title}
                         </Text>
                         <Text>

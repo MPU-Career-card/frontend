@@ -26,7 +26,7 @@ export const Promo: FC<PromoProps> = ({ image, title, description }) => {
                         size={['xs', 's', 'm'].includes(size) ? 'l' : 'xl3'}
                         weight="bold"
                         color="white"
-                        view="montserrat"
+                        view="gilroy"
                         zIndex={2}
                     >
                         {title}
@@ -35,7 +35,7 @@ export const Promo: FC<PromoProps> = ({ image, title, description }) => {
                 <div className={styles.description}>
                     <Text
                         size={['xs', 's', 'm'].includes(size) ? 'xs2' : 'xs'}
-                        view="montserrat"
+                        view="gilroy"
                     >
                         {description}
                     </Text>
