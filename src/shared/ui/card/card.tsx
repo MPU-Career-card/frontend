@@ -31,12 +31,13 @@ export const Card: FC<CardProps> = ({
                     </Text>
                 )}
                 {image
-                  && (
-                      <Image
-                          src={image}
-                          alt={null}
-                      />
-                  )}
+                    && (
+                        <Image
+                            className={styles.cardImage}
+                            src={image}
+                            alt={null}
+                        />
+                    )}
             </Flex>
         )}
         {text && (
