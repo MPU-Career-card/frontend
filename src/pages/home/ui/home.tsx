@@ -23,7 +23,7 @@ import { Loading } from '../../loading';
 
 const HomePage = () => {
     const [profession, setProfession] = useState<Profession | null>(null);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(true); // Начальное состояние — загрузка
     const [errorStatus, setErrorStatus] = useState<number | undefined>(undefined);
     const [errorText, setErrorText] = useState<string | null>(null);
     const { professionTitle } = useParams<ProfessionParams>();
@@ -39,7 +39,7 @@ const HomePage = () => {
             if (err instanceof AxiosError) {
                 const { status, data: { detail } } = err.response || { data: {} };
                 setErrorStatus(status);
-                setErrorText(detail);
+                setErrorText(detail || 'Произошла ошибка при загрузке данных.');
             } else {
                 setErrorStatus(500);
                 setErrorText('Произошла ошибка при загрузке данных.');
@@ -64,13 +64,18 @@ const HomePage = () => {
         return <Loading />;
     }
 
-    if (!profession) {
+    if (errorStatus || errorText) {
         return (
             <Error
                 status={errorStatus}
-                description={errorText || 'Профессия не найдена.'} // Используйте значение по умолчанию
+                description={errorText || 'Профессия не найдена.'}
             />
         );
+    }
+
+    if (!profession) {
+        // Фallback — на случай, если profession неожиданно null, возвращаем пустую страницу
+        return null;
     }
 
     return (

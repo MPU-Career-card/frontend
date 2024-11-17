@@ -1,6 +1,10 @@
 import {
-    ChangeEvent, useEffect, useRef, useState,
+    ChangeEvent,
+    useEffect,
+    useRef,
+    useState,
 } from 'react';
+
 import { AxiosError } from 'axios';
 
 import {
@@ -25,11 +29,19 @@ const SpecialtiesPage = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [errorStatus, setErrorStatus] = useState<number | undefined>(undefined);
     const [errorText, setErrorText] = useState<string | undefined>(undefined);
+    const [showError, setShowError] = useState(false);
 
     const isSearching = useRef<boolean>(false);
 
+    const resetError = () => {
+        setErrorStatus(undefined);
+        setErrorText(undefined);
+        setShowError(false);
+    };
+
     const getFaculties = async () => {
         try {
+            resetError(); // Сброс ошибок перед загрузкой
             setIsLoading(true);
 
             const { data: faculties } = await facultiesApi.get<string[]>('');
@@ -41,10 +53,11 @@ const SpecialtiesPage = () => {
             setSpecialities(specialities);
         } catch (err) {
             if (err instanceof AxiosError) {
-                const { status, data: { detail } } = err.response || { data: {} };
+                const status = err.response?.status || 500; // Если status отсутствует, установить 500
+                const detail = err.response?.data?.detail || 'Произошла ошибка'; // Если detail отсутствует, установить дефолтное сообщение
 
                 setErrorStatus(status);
-                setErrorText(detail);
+                setErrorText(detail || 'Ошибка загрузки факультетов');
             }
         } finally {
             setIsLoading(false);
@@ -55,6 +68,8 @@ const SpecialtiesPage = () => {
         if (isSearching.current) return;
 
         try {
+            resetError(); // Сброс ошибок перед загрузкой
+
             const { data } = await getFaculty(faculty);
 
             setSpecialities((specialities) => ({
@@ -63,10 +78,11 @@ const SpecialtiesPage = () => {
             }));
         } catch (err) {
             if (err instanceof AxiosError) {
-                const { status, data: { detail } } = err.response || { data: {} };
+                const status = err.response?.status || 500;
+                const detail = err.response?.data?.detail || 'Произошла ошибка';
 
                 setErrorStatus(status);
-                setErrorText(detail);
+                setErrorText(detail || 'Ошибка загрузки специальностей');
             }
         }
     };
@@ -74,12 +90,12 @@ const SpecialtiesPage = () => {
     const search = async (search: string) => {
         if (!search) {
             isSearching.current = false;
-            getFaculties();
-
+            await getFaculties(); // Загрузка всех факультетов при пустом поиске
             return;
         }
 
         try {
+            resetError(); // Сброс ошибок перед поиском
             isSearching.current = true;
 
             const { data } = await searchSpecialities(search);
@@ -88,15 +104,14 @@ const SpecialtiesPage = () => {
                 [faculty]: data[faculty].specialities,
             }), {});
 
-            console.log({ specialities });
-
             setSpecialities(specialities);
         } catch (err) {
             if (err instanceof AxiosError) {
-                const { status, data: { detail } } = err.response || { data: {} };
+                const status = err.response?.status || 500;
+                const detail = err.response?.data?.detail || 'Произошла ошибка';
 
                 setErrorStatus(status);
-                setErrorText(detail);
+                setErrorText(detail || 'Ошибка поиска специальностей');
             }
         }
     };
@@ -111,11 +126,22 @@ const SpecialtiesPage = () => {
         getFaculties();
     }, []);
 
+    useEffect(() => {
+        if (errorStatus || errorText) {
+            const timeout = setTimeout(() => setShowError(true), 1000);
+            return () => clearTimeout(timeout);
+        }
+        setShowError(false);
+        return undefined;
+    }, [errorStatus, errorText]);
+    // Показываем ошибку только если она подтверждена и данные пустые
+    const shouldShowError = showError && Object.keys(specialities).length === 0;
+
     if (isLoading) {
         return <Loading />;
     }
 
-    if (errorStatus !== undefined || errorText !== undefined) { // Проверяем наличие ошибки
+    if (shouldShowError) {
         return (
             <Error
                 status={errorStatus}
@@ -123,6 +149,7 @@ const SpecialtiesPage = () => {
             />
         );
     }
+
     return (
         <Container>
             <SpecialitiesPromo
