@@ -22,25 +22,27 @@ import { Error } from '../../error';
 import { Loading } from '../../loading';
 
 const HomePage = () => {
-    const [profession, setProfession] = useState<Profession>();
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [errorStatus, setErrorStatus] = useState<number>();
-    const [errorText, setErrorText] = useState<string>();
+    const [profession, setProfession] = useState<Profession | null>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(true); // Начальное состояние — загрузка
+    const [errorStatus, setErrorStatus] = useState<number | undefined>(undefined);
+    const [errorText, setErrorText] = useState<string | null>(null);
     const { professionTitle } = useParams<ProfessionParams>();
 
     const getProfession = async () => {
         try {
             setIsLoading(true);
-
             const { data } = await professionsApi.get<Profession>(`/${professionTitle}`);
-
             setProfession(data);
+            setErrorStatus(undefined);
+            setErrorText(null);
         } catch (err) {
             if (err instanceof AxiosError) {
                 const { status, data: { detail } } = err.response || { data: {} };
-
                 setErrorStatus(status);
-                setErrorText(detail);
+                setErrorText(detail || 'Произошла ошибка при загрузке данных.');
+            } else {
+                setErrorStatus(500);
+                setErrorText('Произошла ошибка при загрузке данных.');
             }
         } finally {
             setIsLoading(false);
@@ -55,7 +57,6 @@ const HomePage = () => {
         if (!profession?.image_link || profession.image_link === '-') {
             return 'https://www.gofraprime.ru/wp-content/uploads/2017/08/slide-3.jpg';
         }
-
         return profession.image_link;
     }, [profession]);
 
@@ -63,13 +64,18 @@ const HomePage = () => {
         return <Loading />;
     }
 
-    if (!profession) {
+    if (errorStatus || errorText) {
         return (
             <Error
                 status={errorStatus}
-                description={errorText}
+                description={errorText || 'Профессия не найдена.'}
             />
         );
+    }
+
+    if (!profession) {
+        // Фallback — на случай, если profession неожиданно null, возвращаем пустую страницу
+        return null;
     }
 
     return (
