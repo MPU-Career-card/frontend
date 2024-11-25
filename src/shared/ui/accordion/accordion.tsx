@@ -32,7 +32,7 @@ export const Accordion: FC<AccordionProps> = ({
         <div className={cn(className, styles.accordion)}>
             <button
                 type="button"
-                className={styles.header}
+                className={sizeCategory.includes('xs') ? styles.headerMobile : styles.header}
                 onClick={toggleAccordion}
             >
                 <Flex
@@ -40,33 +40,24 @@ export const Accordion: FC<AccordionProps> = ({
                     justify="space-between"
                 >
                     {tags}
-                    {!['xs'].includes(sizeCategory) && (
-                        <Text
-                            size="l"
-                            weight="medium"
-                            className={styles.text}
-                        >
-                            {text}
-                        </Text>
-                    )}
-                    <ArrowToggleIcon
-                        className={cn(
-                            styles.arrow,
-                            {
-                                [styles.open]: isOpen,
-                            },
-                        )}
-                    />
-                </Flex>
-                {['xs'].includes(sizeCategory) && (
                     <Text
-                        size="s"
+                        size="l"
                         weight="medium"
-                        className={styles.textBottom}
+                        className={styles.text}
                     >
                         {text}
                     </Text>
-                )}
+                    <div>
+                        <ArrowToggleIcon
+                            className={cn(
+                                styles.arrow,
+                                {
+                                    [styles.open]: isOpen,
+                                },
+                            )}
+                        />
+                    </div>
+                </Flex>
             </button>
             {isOpen && (
                 <div className={styles.content}>

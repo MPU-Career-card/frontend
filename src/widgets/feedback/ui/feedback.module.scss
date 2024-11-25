@@ -17,23 +17,24 @@
 }
 
 .form {
-  & > *:not(:last-child) {
+  &>*:not(:last-child) {
     margin-bottom: 32px;
   }
 
-  & > *:last-child {
+  &>*:last-child {
     margin-top: 64px;
   }
 }
 
 .image {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 20px;
   align-items: center;
   padding: 32px 34px;
   width: 50%;
 }
+
 .logo {
   display: flex;
   gap: 30px;

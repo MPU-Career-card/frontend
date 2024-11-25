@@ -98,14 +98,6 @@ export const Feedback = () => {
                     src={`${process.env.PUBLIC_URL}/assets/email.png`}
                     alt="email"
                 />
-                <div className={styles.logo}>
-                    <img
-                        src={`${process.env.PUBLIC_URL}/assets/logo_Poly.svg`}
-                        alt="Logo"
-                        width="136px"
-                    />
-                    <Logo />
-                </div>
             </div>
         </div>
     );

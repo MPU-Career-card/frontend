@@ -2,7 +2,7 @@
 import { SVG } from './types';
 
 export const Logo: SVG = ({ ...props }) => (
-    <a href="/" aria-label="Logo">
+    <a href="/" aria-label="Logo" style={{ height: '32px' }}>
         <svg
             width="136"
             height="32"

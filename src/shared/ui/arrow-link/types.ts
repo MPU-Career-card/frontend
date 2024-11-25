@@ -8,4 +8,5 @@ export type ArrowLinkProps = ComponentProps<'div'> & {
     width?: number;
     linkTag?: 'link' | 'a';
     mobile?: boolean;
+    hightlight?: boolean;
 };

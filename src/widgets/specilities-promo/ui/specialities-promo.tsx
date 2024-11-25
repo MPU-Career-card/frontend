@@ -16,13 +16,15 @@ export const SpecialitiesPromo: FC<PromoProps> = ({ image, title, description })
 
     return (
         <div style={style} className={styles.promo}>
-            <div className={styles.logo}>
-                <Logo />
+            <div className={['xs', 's'].includes(size) ? styles.mobileLogoWrapper : ''}>
+                <div className={['xs', 's'].includes(size) ? styles.mobileLogo : styles.logo}>
+                    <Logo />
+                </div>
             </div>
             <div className={styles.info}>
                 <div className={styles.title}>
                     <Text
-                        size={['xs', 's', 'm'].includes(size) ? 'xl2' : 'xl3'}
+                        size={['xs', 's', 'm'].includes(size) ? 'xl' : 'xl2'}
                         weight="bold"
                         color="white"
                         view="gilroy"

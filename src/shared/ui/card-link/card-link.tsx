@@ -47,11 +47,12 @@ export const CardLink: FC<CardLinkProps> = ({
             {(!isMobileProps || !isMobile) && <div className={styles.footer}>{children[1]}</div>}
             <div className={arrowStyle()}>
                 <ArrowLink
-                    width={highlight ? 64 : 38}
+                    width={64}
                     to={to}
                     color={color}
                     linkTag={linkTag}
                     mobile={isMobile && isMobileProps}
+                    hightlight={highlight}
                 />
             </div>
         </div>

@@ -39,21 +39,20 @@ export const Links: FC<LinksProps> = ({
                     ['xs', 's'].includes(sizeCategory)
                         ? 'vertical' : 'horizontal'
                 }
+                align="stretch"
             >
-                {links.map(({ to, title, description }) => (
+                {links.map(({ to, title }) => (
                     <CardLink
                         to={to}
                         color="yellow"
                         highlight={false}
                         linkTag="a"
-                        style={{ marginTop: '20px' }}
+                        style={{ border: '1px solid black' }}
                     >
                         <Text size="m" weight="regular" view="gilroy">
                             {title}
                         </Text>
-                        <Text>
-                            {description}
-                        </Text>
+                        <div />
                     </CardLink>
                 ))}
             </Flex>

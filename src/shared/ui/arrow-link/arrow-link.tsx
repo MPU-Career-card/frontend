@@ -18,6 +18,7 @@ export const ArrowLink: FC<ArrowLinkProps> = ({
     className,
     linkTag = 'link',
     mobile = false,
+    hightlight = true,
 }) => {
     const getArrowColor = (color: Color) => {
         if (['yellow', 'transparent', 'silver', 'white'].includes(color)) {
@@ -44,6 +45,9 @@ export const ArrowLink: FC<ArrowLinkProps> = ({
                 className,
                 styles['arrow-link'],
                 color,
+                {
+                    [styles.highlightArrow]: !hightlight,
+                },
             )}
         >
             <Arrow
@@ -55,5 +59,16 @@ export const ArrowLink: FC<ArrowLinkProps> = ({
 
     return linkTag === 'link'
         ? <Link to={to} target="_blank">{content}</Link>
-        : <a href={to} target="_blank" rel="noreferrer">{content}</a>;
+        : (
+            <a
+                className={cn(
+                    { [styles.highlightLink]: hightlight },
+                )}
+                href={to}
+                target="_blank"
+                rel="noreferrer"
+            >
+                {content}
+            </a>
+        );
 };
