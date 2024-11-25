@@ -1,13 +1,14 @@
 .map {
     border-radius: 24px;
-    background: linear-gradient(to top, #4b2c7f, #7f4e9b); 
+    background: linear-gradient(to top, #4b2c7f, #7f4e9b);
     padding: 64px;
-  }
+}
 
 
 .mapContainer {
     position: relative;
 }
+
 .salary {
     margin-top: 10px;
     background-color: #fff;
@@ -15,6 +16,7 @@
     padding: 5px 10px;
     width: fit-content;
 }
+
 .l {
     zoom: 0.9;
     transform: scale(0.9);
@@ -34,16 +36,16 @@
 
 .xs {
     margin-right: 80px;
-    zoom: 0.7;
-    transform: scale(0.7);
+    zoom: 0.85;
+    transform: scale(0.85);
 }
 
 .pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .opacity {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 .firstPointer {
@@ -56,6 +58,12 @@
         top: 10px;
         left: 90px;
     }
+}
+
+.firstPointerM {
+    position: absolute;
+    top: 0px;
+    left: -80px;
 }
 
 .lastPointer {
@@ -84,6 +92,12 @@
     }
 }
 
+.secondPointerM {
+    position: absolute;
+    top: 140px;
+    left: -80px;
+}
+
 .thirdPointer {
     top: -20px;
     left: 250px;
@@ -94,6 +108,12 @@
         top: 20px;
         left: -240px;
     }
+}
+
+.thirdPointerM {
+    position: absolute;
+    top: 280px;
+    left: -80px;
 }
 
 .forthPointer {
@@ -108,6 +128,12 @@
     }
 }
 
+.forthPointerM {
+    position: absolute;
+    top: 420px;
+    left: -80px;
+}
+
 .fifthPointer {
     top: 90px;
     right: -45px;
@@ -120,8 +146,14 @@
     }
 }
 
+.fifthPointerM {
+    position: absolute;
+    top: 560px;
+    left: -80px;
+}
+
 @media (max-width: 540px) {
-  .map {
-    padding: 32px;
-  }
+    .map {
+        padding: 32px;
+    }
 }
