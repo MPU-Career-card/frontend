@@ -1,5 +1,5 @@
 export enum Routes {
     PROFESSION = '/:professionTitle',
-    SPECIALITY = '/',
+    SPECIALITY = '/frontend',
     OTHER = '*',
 }
