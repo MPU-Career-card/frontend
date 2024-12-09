@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-
+import { Text } from 'shared/ui';
 import { ProfessionParams } from 'shared/types';
 
 import styles from './vacancies.module.scss';
@@ -27,13 +27,18 @@ export const Vacancies = () => {
     }, []);
 
     return (
-        <div className={styles.wrapper}>
-            <div ref={widget} className={styles.widget} />
-            <div className={styles.image}>
-                <img
-                    src={`${process.env.PUBLIC_URL}/assets/vacancies.svg`}
-                    alt="vacancies"
-                />
+        <div>
+            <Text size="xl2">
+                Вакансии
+            </Text>
+            <div className={styles.wrapper}>
+                <div ref={widget} className={styles.widget} />
+                <div className={styles.image}>
+                    <img
+                        src={`${process.env.PUBLIC_URL}/assets/vacancies.svg`}
+                        alt="vacancies"
+                    />
+                </div>
             </div>
         </div>
     );
