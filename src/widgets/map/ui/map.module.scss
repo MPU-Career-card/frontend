@@ -7,6 +7,7 @@
 
 .mapContainer {
     position: relative;
+    width: 100%;
 }
 
 .salary {
@@ -155,5 +156,31 @@
 @media (max-width: 540px) {
     .map {
         padding: 32px;
+    }
+
+    .mapContainer {
+        height: auto; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pointer {
+        width: 100%; 
+        display: flex;
+        align-items: center; 
+        margin-bottom: 20px; 
+        position: relative; 
+        margin-left: -80px;
+    }
+
+
+    .firstPointerM,
+    .secondPointerM,
+    .thirdPointerM,
+    .forthPointerM,
+    .fifthPointerM {
+        position: relative;
+        top: 10; 
+        left: 0;
     }
 }
