@@ -10,4 +10,5 @@ export type PartnersProps = ComponentProps<'div'> & {
     marginTop?: number;
     marginBottom?: number;
     partners: Partner[];
+    faculty: string;
 };

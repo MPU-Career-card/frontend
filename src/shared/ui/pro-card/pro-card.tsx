@@ -13,6 +13,7 @@ export const ProCard: FC<ProCardProps> = ({
     body,
     header,
     tags,
+    footer,
     isResponsiveHeight = false,
     isFullWidth = false,
     isFullHeight = false,
@@ -46,7 +47,7 @@ export const ProCard: FC<ProCardProps> = ({
                 className={styles.content}
                 align="start"
                 direction="vertical"
-                gap={44}
+                gap={16}
             >
                 {header && (
                     <Text
@@ -66,6 +67,12 @@ export const ProCard: FC<ProCardProps> = ({
                         {body}
                     </Text>
                 )}
+                {footer && (
+                    <Text size="m" weight="bold" color={textColor}>
+                        {footer}
+                    </Text>
+                )}
+
             </Flex>
             <Flex className={styles.footer} gap={8} justify="end">
                 {tags?.map((tag) => (
