@@ -112,6 +112,7 @@ const HomePage = () => {
                 partners={professionAdapter.partners(profession)}
                 marginTop={100}
                 marginBottom={100}
+                faculty={profession.faculty}
             />
             <Links
                 links={professionAdapter.links(profession)}

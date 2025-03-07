@@ -6,6 +6,7 @@ export type ProCardProps = {
   header?: string;
   body?: string;
   tags?: string[];
+  footer?: string;
   isResponsiveHeight?: boolean;
   isFullWidth?: boolean;
   isFullHeight?: boolean;
