@@ -7,7 +7,6 @@
 
 .mapContainer {
     position: relative;
-    width: 100%;
 }
 
 .salary {
@@ -159,17 +158,17 @@
     }
 
     .mapContainer {
-        height: auto; 
+        height: auto;
         display: flex;
         flex-direction: column;
     }
 
     .pointer {
-        width: 100%; 
+        width: 100%;
         display: flex;
-        align-items: center; 
-        margin-bottom: 20px; 
-        position: relative; 
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
         margin-left: -80px;
     }
 
@@ -180,7 +179,18 @@
     .forthPointerM,
     .fifthPointerM {
         position: relative;
-        top: 10; 
+        top: 10;
         left: 0;
+    }
+
+    @supports (-webkit-touch-callout: none) {
+
+        .firstPointerM,
+        .secondPointerM,
+        .thirdPointerM,
+        .forthPointerM,
+        .fifthPointerM {
+            left: -10px;
+        }
     }
 }
