@@ -1,3 +1,3 @@
 # Pages:
 
-https://mpu-career-card.github.io/frontend/
+https://mpu-career-card.github.io/frontend/ 
